@@ -1,80 +1,43 @@
-# Compile of pe.sv was successful.
-# Compile of ws_pe_tb.sv was successful.
-# 2 compiles, 0 failed with no errors.
-vsim -gui work.ws_pe_tb
-# vsim -gui work.ws_pe_tb 
-# Start time: 22:36:13 on Dec 21,2025
-# Loading sv_std.std
-# Loading work.ws_pe_tb
-# Loading work.ws_pe
-# WARNING: No extended dataflow license exists
-add wave -position end  sim:/ws_pe_tb/dut/clk
-add wave -position end  sim:/ws_pe_tb/dut/rst
-add wave -position end  sim:/ws_pe_tb/dut/enable
-add wave -position end  sim:/ws_pe_tb/dut/b_load
-add wave -position end  sim:/ws_pe_tb/dut/b_in
-add wave -position end  sim:/ws_pe_tb/dut/a_in
-add wave -position end  sim:/ws_pe_tb/dut/a_out
-add wave -position end  sim:/ws_pe_tb/dut/c_in
-add wave -position end  sim:/ws_pe_tb/dut/c_out
-add wave -position end  sim:/ws_pe_tb/dut/b_r
-run -all
-# Test 1: Loading weight = 5
-# Test 2: MAC with a=2, c_in=10
-# Test 3: MAC with a=-4, c_in=15
-# Compile of ws_pe_tb.sv was successful.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.ws_pe_tb
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# Test 1: Loading weight = 5
-# Test 2: MAC with a=2, c_in=10
-# Test 3: MAC with a=-4, c_in=15
-# Compile of ws_pe_tb.sv was successful.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.ws_pe_tb
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# Test 1: Loading weight = 5
-# Test 2: MAC with a=2, c_in=10
-# Test 3: MAC with a=-4, c_in=15
-# Compile of ws_pe_tb.sv was successful.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.ws_pe_tb
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# Test 1: Loading weight = 5
-# Test 2: MAC with a=2, c_in=10
-# Test 3: MAC with a=-4, c_in=15
-# Compile of skew_buffer.sv failed with 1 errors.
-# Compile of skew_buffer.sv was successful with warnings.
 # Compile of skew_buffer.sv was successful.
 # Compile of skew_buffer_tb.sv was successful.
-vsim -gui work.skew_buffer_tb
-# End time: 00:10:43 on Dec 22,2025, Elapsed time: 1:34:30
-# Errors: 0, Warnings: 7
-# vsim -gui work.skew_buffer_tb 
-# Start time: 00:10:43 on Dec 22,2025
+vsim -gui work.skew_buffer_tb2
+# vsim -gui work.skew_buffer_tb2 
+# Start time: 03:25:01 on Dec 24,2025
 # Loading sv_std.std
-# Loading work.skew_buffer_tb
-# Loading work.skew_buffer
-# A time value could not be extracted from the current line
-add wave -position end  sim:/skew_buffer_tb/clk
-add wave -position end  sim:/skew_buffer_tb/rst
-add wave -position end  sim:/skew_buffer_tb/enable
-add wave -position end  sim:/skew_buffer_tb/data_in
-add wave -position end  sim:/skew_buffer_tb/data_out
+# Loading work.skew_buffer_tb2
+# Loading work.skew_buffer2
+# WARNING: No extended dataflow license exists
+add wave -position end  sim:/skew_buffer_tb2/clk
+add wave -position end  sim:/skew_buffer_tb2/rst
+add wave -position end  sim:/skew_buffer_tb2/enable
+add wave -position end  sim:/skew_buffer_tb2/write
+add wave -position end  sim:/skew_buffer_tb2/row_ptr
+add wave -position end  sim:/skew_buffer_tb2/data_in
+add wave -position end  sim:/skew_buffer_tb2/data_out
 run -all
+add wave -position end  /skew_buffer_tb2/dut/rotated_a_buffer(0)
+add wave -position end  /skew_buffer_tb2/dut/rotated_a_buffer(1)
+add wave -position end  /skew_buffer_tb2/dut/rotated_a_buffer(2)
+add wave -position end  /skew_buffer_tb2/dut/rotated_a_buffer(3)
 restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Compile of skew_buffer.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.skew_buffer2
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Compile of skew_buffer_tb.sv was successful.
+# Compile of skew_buffer_tb.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.skew_buffer_tb2
 run -all
 # GetModuleFileName: The specified module could not be found.
 # 
@@ -82,75 +45,7 @@ run -all
 # Compile of skew_buffer_tb.sv was successful.
 restart -f
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.skew_buffer_tb
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# Compile of skew_buffer.sv was successful with warnings.
-# Compile of pe.sv failed with 1 errors.
-# Compile of pe.sv was successful.
-# Compile of skew_buffer.sv was successful.
-# Compile of 2x2.sv was successful.
-# Compile of 2x2.sv was successful.
-# WARNING: No extended dataflow license exists
-# Compile of 2x2_tb.sv was successful.
-vsim -gui work.two_x_two_tb
-# End time: 02:01:55 on Dec 22,2025, Elapsed time: 1:51:12
-# Errors: 0, Warnings: 10
-# vsim -gui work.two_x_two_tb 
-# Start time: 02:01:55 on Dec 22,2025
-# Loading sv_std.std
-# Loading work.two_x_two_tb
-# Loading work.two_x_two
-# Loading work.skew_buffer
-# Loading work.ws_pe
-# Loading work.ws_pe_no_a_out
-# WARNING: No extended dataflow license exists
-# A time value could not be extracted from the current line
-# A time value could not be extracted from the current line
-add wave -position end  sim:/two_x_two_tb/clk
-add wave -position end  sim:/two_x_two_tb/rst
-add wave -position end  sim:/two_x_two_tb/enable
-add wave -position end  sim:/two_x_two_tb/b_load
-add wave -position end  sim:/two_x_two_tb/b_in
-add wave -position end  sim:/two_x_two_tb/a_in
-add wave -position end  sim:/two_x_two_tb/c_out
-run -all
-# A time value could not be extracted from the current line
-add wave -position end  sim:/two_x_two_tb/dut/a_skewed
-add wave -position end  sim:/two_x_two_tb/dut/a_internals
-add wave -position end  sim:/two_x_two_tb/dut/c_internals
-run -all
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# Compile of 2x2_tb.sv was successful.
-# Compile of 2x2.sv was successful.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.two_x_two_tb
-# Loading work.two_x_two
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-add wave -position end  sim:/two_x_two_tb/c_out
-# Compile of 2x2.sv was successful.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.two_x_two
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# Compile of 2x2_tb.sv was successful.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.two_x_two_tb
+# Loading work.skew_buffer_tb2
 run -all
 # GetModuleFileName: The specified module could not be found.
 # 
