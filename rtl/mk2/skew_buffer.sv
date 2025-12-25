@@ -33,7 +33,8 @@ always_ff @(posedge clk or posedge rst) begin
             end
             //write to a line specified by the pointer
             for(int j = 0; j < ARRAY_SIZE; j++) begin
-                rotated_a_buffer[row_ptr][ARRAY_SIZE-1-j] <= data_in[j];
+                //rotated_a_buffer[row_ptr][ARRAY_SIZE-1-j] <= data_in[j];
+                rotated_a_buffer[row_ptr][j] <= data_in[j];
             end
         end else if(enable) begin
             for(int i = 0; i < ARRAY_SIZE-1; i++) begin

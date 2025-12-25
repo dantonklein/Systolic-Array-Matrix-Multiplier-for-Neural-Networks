@@ -18,44 +18,45 @@ module eight_x_eight_tb;
         clk <= 1'b0;
         forever #5 clk <= ~clk;
     end
-    
+    logic signed[DATA_WIDTH-1:0] a_flattened[64];
+    logic signed[DATA_WIDTH-1:0] a_matrix[8][8];
+    logic signed[DATA_WIDTH-1:0] b_flattened[64];
+    logic signed[DATA_WIDTH-1:0] b_matrix[8][8];
 
-    //testing C = A * B
-    //A = [1 2] B = [5 6] C = [19 22]
-    //    [3 4]     [7 8]     [43 50]
+    initial begin
+        $readmemh("test_A.txt", a_flattened);
+        $readmemh("test_B.txt", b_flattened);
+
+        for(int i = 0; i < 8; i++) begin
+            for(int j = 0; j < 8; j++) begin
+                a_matrix[i][j] = a_flattened[i*8 + j];
+                b_matrix[i][j] = b_flattened[i*8 + j];
+            end
+        end
+    end
     initial begin
         rst <= 1;
         enable <= 0;
-        b_load <= 0;
+        write <= 0;
+        row_ptr <= 0;
         @(posedge clk);
         rst <= 0;
         @(posedge clk);
 
-        //load b
-        b_in[0][0] <= 5;
-        b_in[0][1] <= 6;
-        b_in[1][0] <= 7;
-        b_in[1][1] <= 8;
-        b_load <= 1;
-        @(posedge clk);
-        b_load <= 0;
-
-        //load a
-        a_in[0] <= 1;
-        a_in[1] <= 2;
+        //load a and b matrices
+        for(int i = 0; i < 8; i++) begin
+            for(int j = 0; j < 8; j++) begin
+                a_in[j] <= a_matrix[j][i];
+                b_in[j] <= b_matrix[j][i];
+            end
+            write <= 1;
+            row_ptr <= i;
+            @(posedge clk);
+        end
+        write <= 0;
+        //begin computation
         enable <= 1;
-        @(posedge clk);
-
-        a_in[0] <= 3;
-        a_in[1] <= 4;
-        enable <= 1;
-        @(posedge clk);
-
-        a_in[0] <= 0;
-        a_in[1] <= 0;
-        enable <= 1;
-
-        repeat(9) @(posedge clk);
+        repeat(25) @(posedge clk);
         disable generate_clk;
     end
 endmodule
