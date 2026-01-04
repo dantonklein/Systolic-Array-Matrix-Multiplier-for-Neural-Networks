@@ -1,78 +1,30 @@
-# Compile of 8x8_tb.sv was successful.
-vsim -gui work.eight_x_eight_tb
-# vsim -gui work.eight_x_eight_tb 
-# Start time: 01:33:17 on Dec 25,2025
-# Loading sv_std.std
-# Loading work.eight_x_eight_tb
-# Loading work.eight_x_eight
-# Loading work.skew_buffer2
-# Loading work.ws_pe
-# Loading work.ws_pe_no_a_out
-# WARNING: No extended dataflow license exists
-add wave -position end  sim:/eight_x_eight_tb/clk
-add wave -position end  sim:/eight_x_eight_tb/rst
-add wave -position end  sim:/eight_x_eight_tb/enable
-add wave -position end  sim:/eight_x_eight_tb/write
-add wave -position end  sim:/eight_x_eight_tb/row_ptr
-add wave -position end  sim:/eight_x_eight_tb/b_in
-add wave -position end  sim:/eight_x_eight_tb/a_in
-add wave -position end  sim:/eight_x_eight_tb/c_out
-add wave -position end  /eight_x_eight_tb/dut/skew_buff2/rotated_a_buffer
-add wave -position 5  /eight_x_eight_tb/dut/b_write_column
-add wave -position end  /eight_x_eight_tb/dut/a_internals
-add wave -position end  /eight_x_eight_tb/dut/c_internals
-run -all
-# ** Warning: (vsim-7) Failed to open readmem file "test_A.txt" in read mode.
-# No such file or directory. (errno = ENOENT)    : C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk2/8x8_tb.sv(27)
-#    Time: 0 ps  Iteration: 0  Instance: /eight_x_eight_tb
-# ** Warning: (vsim-7) Failed to open readmem file "test_B.txt" in read mode.
-# No such file or directory. (errno = ENOENT)    : C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk2/8x8_tb.sv(28)
-#    Time: 0 ps  Iteration: 0  Instance: /eight_x_eight_tb
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# ** Warning: (vsim-7) Failed to open readmem file "test_A.txt" in read mode.
-# No such file or directory. (errno = ENOENT)    : C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk2/8x8_tb.sv(27)
-#    Time: 0 ps  Iteration: 0  Instance: /eight_x_eight_tb
-# ** Warning: (vsim-7) Failed to open readmem file "test_B.txt" in read mode.
-# No such file or directory. (errno = ENOENT)    : C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk2/8x8_tb.sv(28)
-#    Time: 0 ps  Iteration: 0  Instance: /eight_x_eight_tb
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# A time value could not be extracted from the current line
-# A time value could not be extracted from the current line
-restart -f
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# Compile of 8x8_tb.sv was successful.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.eight_x_eight_tb
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# Compile of 8x8_tb.sv was successful.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.eight_x_eight_tb
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
 # Compile of skew_buffer.sv was successful.
+# Compile of skew_buffer_tb.sv was successful.
+vsim -gui work.reverse_skew_buffer_tb2
+# vsim -gui work.reverse_skew_buffer_tb2 
+# Start time: 02:31:00 on Jan 04,2026
+# Loading sv_std.std
+# Loading work.reverse_skew_buffer_tb2
+# Loading work.reverse_skew_buffer
+# WARNING: No extended dataflow license exists
+add wave -position end  sim:/reverse_skew_buffer_tb2/dut/ARRAY_SIZE
+add wave -position end  sim:/reverse_skew_buffer_tb2/dut/DATA_WIDTH
+add wave -position end  sim:/reverse_skew_buffer_tb2/dut/clk
+add wave -position end  sim:/reverse_skew_buffer_tb2/dut/rst
+add wave -position end  sim:/reverse_skew_buffer_tb2/dut/enable
+add wave -position end  sim:/reverse_skew_buffer_tb2/dut/write
+add wave -position end  sim:/reverse_skew_buffer_tb2/dut/read
+add wave -position end  sim:/reverse_skew_buffer_tb2/dut/data_in
+add wave -position end  sim:/reverse_skew_buffer_tb2/dut/data_out
+add wave -position end  sim:/reverse_skew_buffer_tb2/dut/shifted_c_buffer
+add wave -position end  sim:/reverse_skew_buffer_tb2/dut/write_column
+add wave -position end  sim:/reverse_skew_buffer_tb2/dut/read_counter
+add wave -position end  sim:/reverse_skew_buffer_tb2/dut/write_buffer
+run -all
+# Compile of skew_buffer_tb.sv was successful.
 restart -f
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.skew_buffer2
+# Loading work.reverse_skew_buffer_tb2
 run -all
 # GetModuleFileName: The specified module could not be found.
 # 
