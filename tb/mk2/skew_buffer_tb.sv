@@ -85,7 +85,7 @@ module reverse_skew_buffer_tb2;
         enable <= 1;
 
         //write to the buffer
-        for(int i = 0; i < ARRAY_SIZE; i++) begin
+        for(int i = 0; i < 2 * ARRAY_SIZE-1; i++) begin
             for(int j = 0; j < ARRAY_SIZE; j++) begin
                 data_in[j] <= i + 1;
             end

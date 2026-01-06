@@ -5,7 +5,9 @@ module eight_x_eight_tb;
     logic clk = 1'b0;
     logic rst;
     logic enable;
-    logic write;
+    logic input_write;
+    logic output_write;
+    logic output_read;
     logic[2:0] row_ptr;
     logic signed [DATA_WIDTH-1:0] b_in[8];
 
@@ -37,7 +39,9 @@ module eight_x_eight_tb;
     initial begin
         rst <= 1;
         enable <= 0;
-        write <= 0;
+        input_write <= 0;
+        output_write <= 0;
+        output_read <= 0;
         row_ptr <= 0;
         @(posedge clk);
         rst <= 0;
@@ -49,14 +53,19 @@ module eight_x_eight_tb;
                 a_in[j] <= a_matrix[j][i];
                 b_in[j] <= b_matrix[j][i];
             end
-            write <= 1;
+            input_write <= 1;
             row_ptr <= i;
             @(posedge clk);
         end
-        write <= 0;
+        input_write <= 0;
         //begin computation
         enable <= 1;
-        repeat(25) @(posedge clk);
+        repeat(8) @(posedge clk);
+        output_write <= 1;
+        repeat(15) @(posedge clk);
+        output_write <= 0;
+        output_read <= 1;
+        repeat(8) @(posedge clk);
         disable generate_clk;
     end
 endmodule

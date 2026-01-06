@@ -1,31 +1,68 @@
 # Compile of skew_buffer.sv was successful.
-# Compile of skew_buffer_tb.sv was successful.
 vsim -gui work.reverse_skew_buffer_tb2
 # vsim -gui work.reverse_skew_buffer_tb2 
-# Start time: 02:31:00 on Jan 04,2026
+# Start time: 20:11:25 on Jan 05,2026
 # Loading sv_std.std
 # Loading work.reverse_skew_buffer_tb2
 # Loading work.reverse_skew_buffer
 # WARNING: No extended dataflow license exists
-add wave -position end  sim:/reverse_skew_buffer_tb2/dut/ARRAY_SIZE
-add wave -position end  sim:/reverse_skew_buffer_tb2/dut/DATA_WIDTH
-add wave -position end  sim:/reverse_skew_buffer_tb2/dut/clk
-add wave -position end  sim:/reverse_skew_buffer_tb2/dut/rst
-add wave -position end  sim:/reverse_skew_buffer_tb2/dut/enable
-add wave -position end  sim:/reverse_skew_buffer_tb2/dut/write
-add wave -position end  sim:/reverse_skew_buffer_tb2/dut/read
-add wave -position end  sim:/reverse_skew_buffer_tb2/dut/data_in
-add wave -position end  sim:/reverse_skew_buffer_tb2/dut/data_out
-add wave -position end  sim:/reverse_skew_buffer_tb2/dut/shifted_c_buffer
-add wave -position end  sim:/reverse_skew_buffer_tb2/dut/write_column
-add wave -position end  sim:/reverse_skew_buffer_tb2/dut/read_counter
-add wave -position end  sim:/reverse_skew_buffer_tb2/dut/write_buffer
+add wave -position end  sim:/reverse_skew_buffer_tb2/DATA_WIDTH
+add wave -position end  sim:/reverse_skew_buffer_tb2/ARRAY_SIZE
+add wave -position end  sim:/reverse_skew_buffer_tb2/clk
+add wave -position end  sim:/reverse_skew_buffer_tb2/rst
+add wave -position end  sim:/reverse_skew_buffer_tb2/enable
+add wave -position end  sim:/reverse_skew_buffer_tb2/write
+add wave -position end  sim:/reverse_skew_buffer_tb2/read
+add wave -position end  sim:/reverse_skew_buffer_tb2/data_in
+add wave -position end  sim:/reverse_skew_buffer_tb2/data_out
+add wave -position 7  /reverse_skew_buffer_tb2/dut/shifted_c_buffer
 run -all
+# Compile of skew_buffer.sv was successful.
 # Compile of skew_buffer_tb.sv was successful.
 restart -f
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # Loading work.reverse_skew_buffer_tb2
+# Loading work.reverse_skew_buffer
 run -all
 # GetModuleFileName: The specified module could not be found.
 # 
 # 
+# Compile of skew_buffer.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.reverse_skew_buffer
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Compile of 8x8.sv failed with 1 errors.
+# Compile of 8x8.sv failed with 1 errors.
+# Compile of 8x8.sv was successful.
+# Compile of 8x8_tb.sv was successful.
+vsim -gui work.eight_x_eight_tb
+# End time: 21:38:01 on Jan 05,2026, Elapsed time: 1:26:36
+# Errors: 0, Warnings: 6
+# vsim -gui work.eight_x_eight_tb 
+# Start time: 21:38:01 on Jan 05,2026
+# Loading sv_std.std
+# Loading work.eight_x_eight_tb
+# Loading work.eight_x_eight
+# Loading work.skew_buffer2
+# Loading work.reverse_skew_buffer
+# Loading work.ws_pe
+# Loading work.ws_pe_no_a_out
+# WARNING: No extended dataflow license exists
+add wave -position end  sim:/eight_x_eight_tb/clk
+add wave -position end  sim:/eight_x_eight_tb/rst
+add wave -position end  sim:/eight_x_eight_tb/enable
+add wave -position end  sim:/eight_x_eight_tb/input_write
+add wave -position end  sim:/eight_x_eight_tb/output_write
+add wave -position end  sim:/eight_x_eight_tb/output_read
+add wave -position end  sim:/eight_x_eight_tb/row_ptr
+add wave -position end  sim:/eight_x_eight_tb/b_in
+add wave -position end  sim:/eight_x_eight_tb/a_in
+add wave -position end  sim:/eight_x_eight_tb/c_out
+add wave -position 9  /eight_x_eight_tb/dut/reverse_skew_buff/shifted_c_buffer
+add wave -position 9  /eight_x_eight_tb/dut/sys_c_out
+add wave -position 6  sim:/eight_x_eight_tb/dut/row_ptr
+run -all

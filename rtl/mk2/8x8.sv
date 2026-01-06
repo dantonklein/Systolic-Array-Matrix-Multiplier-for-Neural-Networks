@@ -5,7 +5,9 @@ module eight_x_eight #(
     input logic clk,
     input logic rst,
     input logic enable,
-    input logic write,
+    input logic input_write,
+    input logic output_write,
+    input logic output_read,
     input logic[2:0] row_ptr,
     //weight matrix (B matrix)
     input var logic signed [DATA_WIDTH-1:0] b_in[8],
@@ -23,7 +25,7 @@ module eight_x_eight #(
         .clk(clk),
         .rst(rst),
         .enable(enable),
-        .write(write),
+        .write(input_write),
         .row_ptr(row_ptr),
         .data_in(a_in),
         .data_out(a_skewed)
@@ -33,7 +35,7 @@ module eight_x_eight #(
     logic signed [DATA_WIDTH-1:0] a_internals[8][8];
 
     logic signed [ACC_WIDTH-1:0] c_internals[9][8];
-
+    logic signed [ACC_WIDTH-1:0] sys_c_out[8];
     
     generate
         for(genvar i = 0; i < 8; i++) begin
@@ -44,7 +46,7 @@ module eight_x_eight #(
             assign c_internals[0][i] = '0;
 
             //output assignments
-            assign c_out[i] = c_internals[8][i];
+            assign sys_c_out[i] = c_internals[8][i];
         end
     endgenerate
 
@@ -52,7 +54,7 @@ module eight_x_eight #(
     logic b_write_column[8];
     always_comb begin
         b_write_column = '{default: 0};
-        b_write_column[row_ptr] = write;
+        b_write_column[row_ptr] = input_write;
     end
 
     //instantiation of the array
@@ -105,4 +107,18 @@ module eight_x_eight #(
             end
         end
     endgenerate
+
+    reverse_skew_buffer #(
+        .ARRAY_SIZE(8),
+        .DATA_WIDTH(ACC_WIDTH)
+    ) reverse_skew_buff (
+        .clk(clk),
+        .rst(rst),
+        .enable(enable),
+        .write(output_write),
+        .read(output_read),
+        .data_in(sys_c_out),
+        .data_out(c_out)
+    );
+
 endmodule
