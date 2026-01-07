@@ -58,11 +58,16 @@ module eight_x_eight_tb;
             @(posedge clk);
         end
         input_write <= 0;
+        
         //begin computation
         enable <= 1;
         repeat(8) @(posedge clk);
+
+        //begin writing to output buffer
         output_write <= 1;
         repeat(15) @(posedge clk);
+
+        //begin reading output buffer
         output_write <= 0;
         output_read <= 1;
         repeat(8) @(posedge clk);
