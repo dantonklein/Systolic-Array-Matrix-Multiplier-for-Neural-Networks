@@ -1,4 +1,11 @@
-C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/pe.sv {1 {vlog -work work -sv -stats=none C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/pe.sv
+C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk2/8x8_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk2/8x8_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module eight_x_eight_tb
+
+Top level modules:
+	eight_x_eight_tb
+
+} {} {}} C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/pe.sv {1 {vlog -work work -sv -stats=none C:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/pe.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module ws_pe
 -- Compiling module ws_pe_no_a_out
@@ -7,7 +14,14 @@ Top level modules:
 	ws_pe
 	ws_pe_no_a_out
 
-} {} {}} C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/skew_buffer.sv {1 {vlog -work work -sv -stats=none C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/skew_buffer.sv
+} {} {}} C:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/top_level.sv {1 {vlog -work work -sv -stats=none C:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/top_level.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module systolic_array_mat_mult_8x8
+
+Top level modules:
+	systolic_array_mat_mult_8x8
+
+} {} {}} C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/skew_buffer.sv {1 {vlog -work work -sv -stats=none C:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/skew_buffer.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module skew_buffer2
 -- Compiling module reverse_skew_buffer
@@ -16,7 +30,7 @@ Top level modules:
 	skew_buffer2
 	reverse_skew_buffer
 
-} {} {}} C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/8x8.sv {1 {vlog -work work -sv -stats=none C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/8x8.sv
+} {} {}} C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/8x8.sv {1 {vlog -work work -sv -stats=none C:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/8x8.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module eight_x_eight
 
