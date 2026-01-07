@@ -66,3 +66,5 @@ add wave -position 9  /eight_x_eight_tb/dut/reverse_skew_buff/shifted_c_buffer
 add wave -position 9  /eight_x_eight_tb/dut/sys_c_out
 add wave -position 6  sim:/eight_x_eight_tb/dut/row_ptr
 run -all
+# End time: 21:50:06 on Jan 06,2026, Elapsed time: 24:12:05
+# Errors: 0, Warnings: 1
