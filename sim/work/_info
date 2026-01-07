@@ -9,103 +9,128 @@ z2
 !i10f 100
 cModel Technology
 dC:/Users/klein/Documents/projects/cache modelsim
-veight_x_eight
+vcontroller
 Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-!s110 1767665847
+!s110 1767800573
 !i10b 1
-!s100 fEofini6IaG<DL>z]>U:@0
+!s100 fOT3Oi@hnP`fc_GZjaoUc2
 Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
-I1o`GcZZl_]P`0RGITUYdW3
+I=]m;3bnnj83<ZKiYbn_n42
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 S1
-Z3 dC:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/sim
-w1767665843
-8C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/8x8.sv
-FC:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/8x8.sv
-!i122 39
-L0 1 124
+Z3 dC:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/sim
+w1767800339
+8C:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/controller.sv
+FC:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/controller.sv
+!i122 48
+L0 3 131
 Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1767665847.000000
-!s107 C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/8x8.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/8x8.sv|
+!s108 1767800572.000000
+!s107 C:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/controller.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/controller.sv|
 !i113 1
 Z5 o-work work -sv
 Z6 tCvgOpt 0
-veight_x_eight_tb
+veight_x_eight
 R0
-!s110 1767667061
+Z7 !s110 1767794083
 !i10b 1
-!s100 _`4L`o@PcUQ`Eaf_l`h5K1
+!s100 fEofini6IaG<DL>z]>U:@0
 R1
-IU?:IlBlQF4aGS4f_W<`A`0
+IYen;Cm7Q;ADdWT5?2l;PI2
 R2
 S1
 R3
-w1767667057
-8C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk2/8x8_tb.sv
-FC:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk2/8x8_tb.sv
-!i122 40
-L0 1 71
+Z8 w1767791842
+8C:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/8x8.sv
+FC:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/8x8.sv
+!i122 42
+L0 1 124
 R4
 r1
 !s85 0
 31
-!s108 1767667061.000000
-!s107 C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk2/8x8_tb.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk2/8x8_tb.sv|
+Z9 !s108 1767794083.000000
+!s107 C:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/8x8.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/8x8.sv|
+!i113 1
+R5
+R6
+veight_x_eight_tb
+R0
+R7
+!i10b 1
+!s100 TD7E=GNZfFlo:TeS@lLIz2
+R1
+I6nM]h7FecFbRHDhO7]=IZ3
+R2
+S1
+R3
+R8
+8C:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk2/8x8_tb.sv
+FC:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk2/8x8_tb.sv
+!i122 44
+L0 1 76
+R4
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk2/8x8_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk2/8x8_tb.sv|
 !i113 1
 R5
 R6
 vreverse_skew_buffer
 R0
-Z7 !s110 1767663508
+R7
 !i10b 1
-!s100 NOhH43j8jnISJK19P_X4j3
+!s100 oRahY=Snh;1RnD8<0_mXg3
 R1
-IVEHF;ea9OPhE]]=]c6V4;0
+I4<JjeoY?6j@S:8UHF;kQO3
 R2
 S1
 R3
-Z8 w1767663503
-Z9 8C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/skew_buffer.sv
-Z10 FC:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/skew_buffer.sv
-!i122 38
-L0 70 75
+Z10 w1767793960
+Z11 8C:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/skew_buffer.sv
+Z12 FC:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/skew_buffer.sv
+!i122 41
+L0 70 68
 R4
 r1
 !s85 0
 31
-Z11 !s108 1767663507.000000
-Z12 !s107 C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/skew_buffer.sv|
-Z13 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/skew_buffer.sv|
+R9
+Z13 !s107 C:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/skew_buffer.sv|
+Z14 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/skew_buffer.sv|
 !i113 1
 R5
 R6
 vreverse_skew_buffer_tb2
 R0
-Z14 !s110 1767663420
+Z15 !s110 1767663420
 !i10b 1
 !s100 kP2I`]mdB5]WN:Zk8coF?1
 R1
 IaWal4Eic4b]ifNkYU2;5@1
 R2
 S1
-R3
-Z15 w1767663413
-Z16 8C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk2/skew_buffer_tb.sv
-Z17 FC:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk2/skew_buffer_tb.sv
+Z16 dC:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/sim
+Z17 w1767663413
+Z18 8C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk2/skew_buffer_tb.sv
+Z19 FC:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk2/skew_buffer_tb.sv
 !i122 37
 L0 55 52
 R4
 r1
 !s85 0
 31
-Z18 !s108 1767663420.000000
-Z19 !s107 C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk2/skew_buffer_tb.sv|
-Z20 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk2/skew_buffer_tb.sv|
+Z20 !s108 1767663420.000000
+Z21 !s107 C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk2/skew_buffer_tb.sv|
+Z22 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk2/skew_buffer_tb.sv|
 !i113 1
 R5
 R6
@@ -118,7 +143,7 @@ R1
 IBUZD3DVfAbIXKW7IO<A6i0
 R2
 S1
-R3
+R16
 w1766381150
 8C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk1/skew_buffer.sv
 FC:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk1/skew_buffer.sv
@@ -140,22 +165,22 @@ R7
 !i10b 1
 !s100 Y6oWo4j1YECEKh7aXekI43
 R1
-IQIF8W0CO_>@[fkMAdYoZ13
+IJLO57H`^PHCdi0bfiUT@F3
 R2
 S1
 R3
-R8
-R9
 R10
-!i122 38
+R11
+R12
+!i122 41
 L0 1 66
 R4
 r1
 !s85 0
 31
-R11
-R12
+R9
 R13
+R14
 !i113 1
 R5
 R6
@@ -168,7 +193,7 @@ R1
 I3NTiXQd]zY:Okg[<KLXXH2
 R2
 S1
-R3
+R16
 w1766380352
 8C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/skew_buffer_tb.sv
 FC:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/skew_buffer_tb.sv
@@ -186,26 +211,76 @@ R5
 R6
 vskew_buffer_tb2
 R0
-R14
+R15
 !i10b 1
 !s100 5nk6;F165R3S9f<[Lj;jK3
 R1
 IhGBCd]O33iDRI8VfGRif40
 R2
 S1
-R3
-R15
 R16
 R17
+R18
+R19
 !i122 37
 L0 1 53
 R4
 r1
 !s85 0
 31
-R18
-R19
 R20
+R21
+R22
+!i113 1
+R5
+R6
+vsystolic_array_mat_mult_8x8
+R0
+!s110 1767796540
+!i10b 1
+!s100 oaaM@UoKQNffo4V2L`:_c1
+R1
+IgB35J_;CD1c32W9P=]ic^2
+R2
+S1
+R3
+w1767796495
+8C:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/top_level.sv
+FC:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/top_level.sv
+!i122 47
+L0 5 61
+R4
+r1
+!s85 0
+31
+!s108 1767796540.000000
+!s107 C:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/top_level.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/top_level.sv|
+!i113 1
+R5
+R6
+vtop_level_tb
+R0
+!s110 1767800664
+!i10b 1
+!s100 BoN^@C3nKlN[B1<T7cKBn2
+R1
+I77<?dTYDD9GVb9Ld6iWfG2
+R2
+S1
+R3
+w1767800648
+8C:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk2/top_level_tb.sv
+FC:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk2/top_level_tb.sv
+!i122 49
+L0 1 67
+R4
+r1
+!s85 0
+31
+!s108 1767800664.000000
+!s107 C:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk2/top_level_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk2/top_level_tb.sv|
 !i113 1
 R5
 R6
@@ -218,7 +293,7 @@ R1
 IdB;J@:omHQRHlWJ7VKIdK0
 R2
 S1
-R3
+R16
 w1766388777
 8C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk1/2x2.sv
 FC:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk1/2x2.sv
@@ -243,7 +318,7 @@ R1
 I7Kj:;j0VW;kVjJ`7oO>EO3
 R2
 S1
-R3
+R16
 w1766391712
 8C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/2x2_tb.sv
 FC:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/2x2_tb.sv
@@ -261,51 +336,51 @@ R5
 R6
 vws_pe
 R0
-Z21 !s110 1766623760
+R7
 !i10b 1
 !s100 XLjo7KaP@Vn60B4Mia@kA0
 R1
-IbRh22CcMP7SNIeK^VP?zM1
+Iz>2M0ZdQ7A6eKY`mED<c=2
 R2
 S1
 R3
-Z22 w1766384636
-Z23 8C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/pe.sv
-Z24 FC:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/pe.sv
-!i122 26
+R8
+Z23 8C:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/pe.sv
+Z24 FC:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/pe.sv
+!i122 43
 L0 5 39
 R4
 r1
 !s85 0
 31
-Z25 !s108 1766623760.000000
-Z26 !s107 C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/pe.sv|
-Z27 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/pe.sv|
+R9
+Z25 !s107 C:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/pe.sv|
+Z26 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/klein/Documents/Projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk2/pe.sv|
 !i113 1
 R5
 R6
 vws_pe_no_a_out
 R0
-R21
+R7
 !i10b 1
 !s100 Fo0XA9alY=i6P1hbEn`9@0
 R1
-ImDXAHQPcVZnHcLDQ=L4:^1
+IR;51^9SUj:>P@TQ<KieTg2
 R2
 S1
 R3
-R22
+R8
 R23
 R24
-!i122 26
+!i122 43
 L0 45 36
 R4
 r1
 !s85 0
 31
+R9
 R25
 R26
-R27
 !i113 1
 R5
 R6
@@ -318,7 +393,7 @@ R1
 IjXTK?m]3M]`_H0^A8C0C90
 R2
 S1
-R3
+R16
 w1766375266
 8C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/ws_pe_tb.sv
 FC:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/ws_pe_tb.sv

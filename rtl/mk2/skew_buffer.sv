@@ -79,6 +79,7 @@ module reverse_skew_buffer #(
 
     //rows are written 
     input var logic signed [DATA_WIDTH-1:0] data_in [ARRAY_SIZE],
+    output logic read_valid,
     output var logic signed [DATA_WIDTH-1:0] data_out [ARRAY_SIZE]
 );
 
@@ -110,6 +111,7 @@ always_ff @(posedge clk or posedge rst) begin
             for(int i = 1; i < ARRAY_SIZE; i++) begin
                 write_column[i] <= 0;
             end
+            
         end else if(write_buffer) begin
             if(column_counter == ARRAY_SIZE-1) write_column[0] <= 0;
             else column_counter <= column_counter + 1'b1; 
@@ -124,9 +126,6 @@ always_ff @(posedge clk or posedge rst) begin
                         shifted_c_buffer[j][i] <= shifted_c_buffer[j-1][i];
                     end
                 end
-                // for(int j = 1; j < ARRAY_SIZE; j++) begin
-                //     shifted_c_buffer[j][i] <= shifted_c_buffer[j-1][i];
-                // end
             end
         end
     end
@@ -134,11 +133,7 @@ end
 
 always_comb begin
     for(int i = 0; i < ARRAY_SIZE; i++) begin
-        if(read) begin //can probably get rid of this if statement
-            data_out[i] = shifted_c_buffer[read_counter][i];
-        end else begin
-            data_out[i] = 0;
-        end
+        data_out[i] = shifted_c_buffer[read_counter][i];
     end
 end
 endmodule
