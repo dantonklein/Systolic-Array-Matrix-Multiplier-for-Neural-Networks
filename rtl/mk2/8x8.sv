@@ -9,6 +9,7 @@ module eight_x_eight #(
     input logic output_write,
     input logic output_read,
     input logic[2:0] row_ptr,
+    output logic read_valid,
     //weight matrix (B matrix)
     input var logic signed [DATA_WIDTH-1:0] b_in[8],
     //activation matrix (A matrix)
@@ -117,6 +118,7 @@ module eight_x_eight #(
         .enable(enable),
         .write(output_write),
         .read(output_read),
+        .read_valid(read_valid),
         .data_in(sys_c_out),
         .data_out(c_out)
     );

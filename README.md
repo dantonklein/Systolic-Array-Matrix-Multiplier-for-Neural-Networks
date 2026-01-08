@@ -9,5 +9,8 @@ for mk2 i will optimize the skew buffer to allow for cycle by cycle loads of col
 i will also increase the matrix to 8x8 size. i will also make it such that B is loaded column by column
 another thing i will be doing is a specialized 8x8 output buffer for matrix C
 
+I HAVE FINISHED THE MK2
+
+i am researching tiling
 
 for mk3 i will introduce tiling to allow for any sized matrix in addition to an axi stream interface

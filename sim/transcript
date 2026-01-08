@@ -1,0 +1,48 @@
+# Compile of 8x8.sv was successful.
+# Compile of controller.sv was successful.
+# Compile of pe.sv was successful.
+# Compile of skew_buffer.sv was successful.
+# Compile of top_level.sv failed with 1 errors.
+# Compile of top_level_tb.sv was successful.
+# 6 compiles, 1 failed with 1 error.
+# Compile of top_level.sv was successful.
+vsim -gui work.top_level_tb
+# vsim -gui work.top_level_tb 
+# Start time: 21:32:31 on Jan 07,2026
+# Loading sv_std.std
+# Loading work.top_level_tb
+# Loading work.systolic_array_mat_mult_8x8
+# Loading work.controller
+# Loading work.eight_x_eight
+# Loading work.skew_buffer2
+# Loading work.reverse_skew_buffer
+# Loading work.ws_pe
+# Loading work.ws_pe_no_a_out
+# WARNING: No extended dataflow license exists
+add wave -position end  sim:/top_level_tb/clk
+add wave -position end  sim:/top_level_tb/rst
+add wave -position end  sim:/top_level_tb/start
+add wave -position end  sim:/top_level_tb/done
+add wave -position end  sim:/top_level_tb/ready
+add wave -position end  sim:/top_level_tb/a_valid
+add wave -position end  sim:/top_level_tb/a_ready
+add wave -position end  sim:/top_level_tb/a_in
+add wave -position end  sim:/top_level_tb/b_valid
+add wave -position end  sim:/top_level_tb/b_ready
+add wave -position end  sim:/top_level_tb/b_in
+add wave -position end  sim:/top_level_tb/c_valid
+add wave -position end  sim:/top_level_tb/c_ready
+add wave -position end  sim:/top_level_tb/c_out
+run -all
+# Compile of controller.sv was successful.
+# Compile of top_level.sv was successful.
+# Compile of top_level_tb.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.top_level_tb
+# Loading work.systolic_array_mat_mult_8x8
+# Loading work.controller
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 

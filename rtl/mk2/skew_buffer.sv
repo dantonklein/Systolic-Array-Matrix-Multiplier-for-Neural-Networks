@@ -102,6 +102,7 @@ always_ff @(posedge clk or posedge rst) begin
         end
         column_counter <= 0;
         read_counter <= '1;
+        read_valid <= 0;
     end else begin
         if(read) begin
             //upon a read being initiated increment the counter, also reset the write_column buffer
@@ -111,8 +112,10 @@ always_ff @(posedge clk or posedge rst) begin
             for(int i = 1; i < ARRAY_SIZE; i++) begin
                 write_column[i] <= 0;
             end
+            if(read_counter == 0) read_valid <= 0;
             
         end else if(write_buffer) begin
+            read_valid <= 1;
             if(column_counter == ARRAY_SIZE-1) write_column[0] <= 0;
             else column_counter <= column_counter + 1'b1; 
             for(int i = 0; i < ARRAY_SIZE-1; i++) begin

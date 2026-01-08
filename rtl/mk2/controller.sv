@@ -24,6 +24,7 @@ module controller (
     output logic[2:0] row_ptr,
 
     //control signals for future c buffer
+    input logic read_valid,
     output logic c_valid
     //input logic c_ready, this would be handled by top level, controlled by external peripheral(testbench)
 );
@@ -128,6 +129,6 @@ module controller (
         end
     end
     assign row_ptr = ab_counter_r;
-    assign c_valid = data_ready_r;
+    assign c_valid = data_ready_r & read_valid;
     
 endmodule

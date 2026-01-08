@@ -64,7 +64,7 @@ module top_level_tb;
         end
         @(posedge done);
         c_ready <= 1;
-        repeat(8) @(posedge clk);
+        repeat(9) @(posedge clk);
         disable generate_clk;
     end
 endmodule

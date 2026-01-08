@@ -23,7 +23,7 @@ module systolic_array_mat_mult_8x8 (
     output var logic signed [31:0] c_out[8]
 );
 
-logic enable, input_write, output_write, output_read;
+logic enable, input_write, output_write, output_read, read_valid;
 
 logic[2:0] row_ptr;
 
@@ -41,6 +41,7 @@ controller CONTROLLER (
     .input_write(input_write),
     .output_write(output_write),
     .row_ptr(row_ptr),
+    .read_valid(read_valid),
     .c_valid(c_valid)
 );
 
@@ -56,6 +57,7 @@ eight_x_eight #(
     .input_write(input_write),
     .output_write(output_write),
     .output_read(output_read),
+    .read_valid(read_valid),
     .row_ptr(row_ptr),
     .a_in(a_in),
     .b_in(b_in),
