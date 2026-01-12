@@ -1,4 +1,5 @@
-module skew_buffer2 #(
+//skew buffer 3: this buffer will allow simultaneous writing and enabling, with a one cycle delay
+module skew_buffer3 #(
     parameter ARRAY_SIZE = 8,
     parameter DATA_WIDTH = 8
 )(
@@ -14,7 +15,7 @@ module skew_buffer2 #(
 );
 //matrix to hold the A matrix, which is rotated
 logic[DATA_WIDTH-1:0] rotated_a_buffer[ARRAY_SIZE][ARRAY_SIZE];
-logic[ARRAY_SIZE] read_row;
+logic[ARRAY_SIZE-1:0] read_row;
 
 always_ff @(posedge clk or posedge rst) begin
     if(rst) begin
@@ -22,21 +23,18 @@ always_ff @(posedge clk or posedge rst) begin
             for(int j = 0; j < ARRAY_SIZE; j++) begin
                 rotated_a_buffer[i][j] <= 0;
             end
-            read_row[i] <= 0;
+            if(i == 0) read_row[0] <= 1;
+            else read_row[i] <= 0;
         end
     end else begin
         if(write) begin
-            //reset reading flags
-            read_row[0] <= 1;
-            for(int i = 1; i < ARRAY_SIZE; i++) begin
-                read_row[i] <= 0;
-            end
             //write to a line specified by the pointer
             for(int j = 0; j < ARRAY_SIZE; j++) begin
                 //rotated_a_buffer[row_ptr][ARRAY_SIZE-1-j] <= data_in[j];
                 rotated_a_buffer[row_ptr][j] <= data_in[j];
             end
-        end else if(enable) begin
+        end 
+        if(enable) begin
             for(int i = 0; i < ARRAY_SIZE-1; i++) begin
                 read_row[i+1] <= read_row[i];
             end
@@ -48,24 +46,26 @@ always_ff @(posedge clk or posedge rst) begin
                 end
             end
         end
+        else begin
+            read_row[0] <= 1;
+            for(int i = 1; i < ARRAY_SIZE; i++) begin
+                read_row[i] <= 0;
+            end
+        end
 
     end
 end
 
 always_comb begin
     for(int i = 0; i < ARRAY_SIZE; i++) begin
-        if(read_row[i]) begin //this if statement is probably not necessary gonna test it later
-            data_out[i] = rotated_a_buffer[i][0];
-        end
-        else begin
-            data_out[i] = 0;
-        end
+        data_out[i] = rotated_a_buffer[i][0];
     end
 end
 
 endmodule
 
 
+//i need a way to track the progress of each column being filled, maybe i could use a counter or something
 module reverse_skew_buffer #(
     parameter ARRAY_SIZE = 8,
     parameter DATA_WIDTH = 32

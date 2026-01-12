@@ -40,8 +40,10 @@ module controller (
 
     logic data_ready_r;
 
-    logic[2:0] ab_counter_r, c_counter_r;
-    logic[2:0] next_ab_counter, next_c_counter;
+    // logic[2:0] ab_counter_r, c_counter_r;
+    // logic[2:0] next_ab_counter, next_c_counter;
+    logic[3:0] compute_counter_r;
+    logic[3:0] next_compute_counter;
 
     logic[3:0] c_buffer_counter_r;
     logic[3:0] next_c_buffer_counter;
@@ -49,14 +51,16 @@ module controller (
     always_ff @(posedge clk or posedge rst) begin
         if (rst) begin
             state_r <= IDLE;
-            ab_counter_r <= 0;
-            c_counter_r <= 0;
+            //ab_counter_r <= 0;
+            //c_counter_r <= 0;
+            compute_counter_r <= 0;
             c_buffer_counter_r <= 0;
         end
         else begin
             state_r <= next_state;
-            ab_counter_r <= next_ab_counter;
-            c_counter_r <= next_c_counter;
+            //ab_counter_r <= next_ab_counter;
+            //c_counter_r <= next_c_counter;
+            compute_counter_r <= next_compute_counter;
             c_buffer_counter_r <= next_c_buffer_counter;
         end
     end
@@ -74,41 +78,51 @@ module controller (
         //output_read = 0;
 
         next_state = state_r;
-        next_ab_counter = ab_counter_r;
-        next_c_counter = c_counter_r;
+        // next_ab_counter = ab_counter_r;
+        // next_c_counter = c_counter_r;
+        next_compute_counter = compute_counter_r;
         next_c_buffer_counter = c_buffer_counter_r;
 
         case(state_r)
             IDLE: begin
-                next_ab_counter = 0;
-                next_c_counter = 0;
+                // next_ab_counter = 0;
+                // next_c_counter = 0;
+                next_compute_counter = 0;
                 next_c_buffer_counter = 0;
                 ready = 1;
                 if(start) next_state = LOAD;
             end
-            LOAD: begin //takes 8 cycles
+            LOAD: begin //1 cycle, then occurs simultaneously with next cycle
                 a_ready = 1;
                 b_ready = 1;
                 if(a_valid && b_valid) begin
-                    next_ab_counter = ab_counter_r + 1'b1;
+                    next_compute_counter = compute_counter_r + 1'b1;
                     input_write = 1;
+                    next_state = COMPUTE;
                 end else input_write = 0;
                 //counter resets upon overflow
-                if(ab_counter_r == 3'b111) next_state = COMPUTE;
             end
-            COMPUTE: begin //takes 8 cycles
-                enable = 1;
-                next_c_counter = c_counter_r + 1'b1;
-                //counter resets upon overflow
-                if(c_counter_r == 3'b111) next_state = DRAIN;
+            COMPUTE: begin //8 cycles
+                if(compute_counter_r < 8) begin
+                    a_ready = 1;
+                    b_ready = 1;
+                    if(a_valid && b_valid) begin
+                        next_compute_counter = compute_counter_r + 1'b1;
+                        input_write = 1;
+                        enable = 1;
+                    end
+                end else begin //writing is finished
+                    enable = 1;
+                    next_state = DRAIN;
+                end
             end
-            DRAIN: begin //takes 8 + 7 cycles
+            DRAIN: begin //15 cycles
                 enable = 1;
                 output_write = 1;
                 next_c_buffer_counter = c_buffer_counter_r + 1'b1;
                 if(c_buffer_counter_r == 4'd14) next_state = DONE;
             end
-            DONE: begin
+            DONE: begin //1 cycle
                 next_c_buffer_counter = 0;
                 done = 1;
                 ready = 1;
@@ -128,7 +142,7 @@ module controller (
             end
         end
     end
-    assign row_ptr = ab_counter_r;
+    assign row_ptr = compute_counter_r[2:0];
     assign c_valid = data_ready_r & read_valid;
     
 endmodule

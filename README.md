@@ -13,4 +13,20 @@ I HAVE FINISHED THE MK2
 
 i am researching tiling
 
-for mk3 i will introduce tiling to allow for any sized matrix in addition to an axi stream interface
+Mk3 Roadmap:
+
+1. (DONE) Improve throughput of 8x8 pipeline by loading columns as the systolic array computes
+
+2. Increase size of processing element grid to 16x16, create enable tree
+
+3. Create Fifo buffers for queuing tiles for the architecture
+
+4. Create accumulation registers
+
+5. Create unified buffer
+
+6. Create the ram interface for the unified buffer
+
+7. Create new controller (that triple nested for loop)
+
+8. Implement bias, activation, and pooling
