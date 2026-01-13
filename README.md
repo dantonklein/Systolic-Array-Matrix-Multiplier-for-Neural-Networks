@@ -19,7 +19,7 @@ Mk3 Roadmap:
 
 2. (DONE) Increase size of processing element grid to 16x16
 
-3. Create enable tree
+3. (DONE) Create enable tree
 
 4. Create Fifo buffers for queuing tiles for the architecture
 

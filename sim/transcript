@@ -117,3 +117,18 @@ run -all
 # GetModuleFileName: The specified module could not be found.
 # 
 # 
+# Compile of controller.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.controller
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Compile of controller.sv was successful.
+# Compile of pe.sv was successful.
+# Compile of skew_buffer.sv was successful.
+# Compile of systolic_array.sv was successful.
+# Compile of top_level.sv was successful.
+# Compile of top_level_tb.sv was successful.
+# 6 compiles, 0 failed with no errors.

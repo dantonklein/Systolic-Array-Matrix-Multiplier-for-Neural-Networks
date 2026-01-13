@@ -28,9 +28,8 @@ module controller (
     output logic c_valid
     //input logic c_ready, this would be handled by top level, controlled by external peripheral(testbench)
 );
-    typedef enum logic [2:0] {
+    typedef enum logic [1:0] {
         IDLE,
-        LOAD,
         COMPUTE,
         DRAIN,
         DONE
@@ -68,6 +67,21 @@ module controller (
     logic fire;
     assign fire = a_valid && b_valid && a_ready && b_ready;
 
+    //for vivado
+    // (* max_fanout = 32*)
+    // logic enable_r;
+
+    //for quartus
+    (* maxfan = 32*)
+    logic enable_r;
+
+    logic enable_pre_reg;
+    always_ff @(posedge clk) begin
+        enable_r <= enable_pre_reg;
+    end
+
+    assign enable = enable_r;
+
     always_comb begin
         done = 0;
         ready = 0;
@@ -75,7 +89,7 @@ module controller (
         a_ready = 0;
         b_ready = 0;
 
-        enable = 0;
+        enable_pre_reg = 0;
         input_write = 0;
         output_write = 0;
         //output_read = 0;
@@ -93,37 +107,31 @@ module controller (
                 next_compute_counter = 0;
                 next_c_buffer_counter = 0;
                 ready = 1;
-                if(start) next_state = LOAD;
+                if(start) next_state = COMPUTE;
             end
-            LOAD: begin //1 cycle, then occurs simultaneously with next cycle
-                a_ready = 1;
-                b_ready = 1;
-                if(a_valid && b_valid) begin
-                    next_compute_counter = compute_counter_r + 1'b1;
-                    input_write = 1;
-                    next_state = COMPUTE;
-                end else input_write = 0;
-                //counter resets upon overflow
-            end
-            COMPUTE: begin //16 cycles
+            COMPUTE: begin //17 cycles
                 if(compute_counter_r < 16) begin
                     a_ready = 1;
                     b_ready = 1;
-                    if(a_valid && b_valid) begin
+                    if(fire) begin
                         next_compute_counter = compute_counter_r + 1'b1;
                         input_write = 1;
-                        enable = 1;
+                        enable_pre_reg = 1;
                     end
                 end else begin //writing is finished
-                    enable = 1;
+                    enable_pre_reg = 1;
                     next_state = DRAIN;
                 end
             end
             DRAIN: begin //31 cycles
-                enable = 1;
                 output_write = 1;
                 next_c_buffer_counter = c_buffer_counter_r + 1'b1;
-                if(c_buffer_counter_r == 5'd30) next_state = DONE;
+                if(c_buffer_counter_r == 5'd30) begin 
+                    next_state = DONE;
+                    enable_pre_reg = 0;
+                end else begin
+                    enable_pre_reg = 1;
+                end
             end
             DONE: begin //1 cycle
                 next_c_buffer_counter = 0;
