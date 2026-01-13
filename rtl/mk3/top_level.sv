@@ -2,7 +2,7 @@
 //i am making the assumption that the hypothetical A and B buffers(that will be made in mk3) are available at the same time
 
 
-module systolic_array_mat_mult_8x8mk3 (
+module systolic_array_mat_mult_16x16mk3 (
     input logic clk,
     input logic rst,
 
@@ -12,20 +12,20 @@ module systolic_array_mat_mult_8x8mk3 (
 
     input logic a_valid,
     output logic a_ready,
-    input var logic signed [7:0] a_in[8],
+    input var logic signed [7:0] a_in[16],
 
     input logic b_valid,
     output logic b_ready,
-    input var logic signed [7:0] b_in[8],
+    input var logic signed [7:0] b_in[16],
 
     output logic c_valid,
     input logic c_ready,
-    output var logic signed [31:0] c_out[8]
+    output var logic signed [31:0] c_out[16]
 );
 
 logic enable, input_write, output_write, output_read, read_valid;
 
-logic[2:0] row_ptr;
+logic[3:0] row_ptr;
 
 controller CONTROLLER (
     .clk(clk),
@@ -47,10 +47,10 @@ controller CONTROLLER (
 
 assign output_read = c_valid & c_ready;
 
-eight_x_eight #(
+systolic_array #(
     .DATA_WIDTH(8),
     .ACC_WIDTH(32)
-) EIGHT_X_EIGHT (
+) SYSTOLIC_ARRAY (
     .clk(clk),
     .rst(rst),
     .enable(enable),

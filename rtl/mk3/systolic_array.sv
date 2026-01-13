@@ -1,4 +1,4 @@
-module eight_x_eight #(
+module systolic_array #(
     parameter int DATA_WIDTH = 8,
     parameter int ACC_WIDTH = 32
 )(
@@ -8,19 +8,19 @@ module eight_x_eight #(
     input logic input_write,
     input logic output_write,
     input logic output_read,
-    input logic[2:0] row_ptr,
+    input logic[3:0] row_ptr,
     output logic read_valid,
     //weight matrix (B matrix)
-    input var logic signed [DATA_WIDTH-1:0] b_in[8],
+    input var logic signed [DATA_WIDTH-1:0] b_in[16],
     //activation matrix (A matrix)
-    input var logic signed [DATA_WIDTH-1:0] a_in[8],
-    output var logic signed [ACC_WIDTH-1:0] c_out[8]
+    input var logic signed [DATA_WIDTH-1:0] a_in[16],
+    output var logic signed [ACC_WIDTH-1:0] c_out[16]
 );
     //output of skew buffer
-    logic signed [DATA_WIDTH-1:0] a_skewed [8];
+    logic signed [DATA_WIDTH-1:0] a_skewed [16];
 
     skew_buffer3 #(
-        .ARRAY_SIZE(8),
+        .ARRAY_SIZE(16),
         .DATA_WIDTH(DATA_WIDTH)
     ) skew_buff3 (
         .clk(clk),
@@ -33,13 +33,13 @@ module eight_x_eight #(
     );
 
     //internal a connections
-    logic signed [DATA_WIDTH-1:0] a_internals[8][8];
+    logic signed [DATA_WIDTH-1:0] a_internals[16][16];
 
-    logic signed [ACC_WIDTH-1:0] c_internals[9][8];
-    logic signed [ACC_WIDTH-1:0] sys_c_out[8];
+    logic signed [ACC_WIDTH-1:0] c_internals[17][16];
+    logic signed [ACC_WIDTH-1:0] sys_c_out[16];
     
     generate
-        for(genvar i = 0; i < 8; i++) begin
+        for(genvar i = 0; i < 16; i++) begin
             //left side assignments
             assign a_internals[i][0] = a_skewed[i];
 
@@ -47,12 +47,12 @@ module eight_x_eight #(
             assign c_internals[0][i] = '0;
 
             //output assignments
-            assign sys_c_out[i] = c_internals[8][i];
+            assign sys_c_out[i] = c_internals[16][i];
         end
     endgenerate
 
     //b write logic
-    logic b_write_column[8];
+    logic b_write_column[16];
     always_comb begin
         b_write_column = '{default: 0};
         b_write_column[row_ptr] = input_write;
@@ -60,9 +60,9 @@ module eight_x_eight #(
 
     //instantiation of the array
     generate
-        for(genvar row = 0; row < 8; row++) begin
-            for(genvar column = 0; column < 8; column++) begin
-                if(column == 7) begin
+        for(genvar row = 0; row < 16; row++) begin
+            for(genvar column = 0; column < 16; column++) begin
+                if(column == 15) begin
                     ws_pe_no_a_out #(
                         .DATA_WIDTH(DATA_WIDTH),
                         .ACC_WIDTH(ACC_WIDTH)
@@ -110,7 +110,7 @@ module eight_x_eight #(
     endgenerate
 
     reverse_skew_buffer #(
-        .ARRAY_SIZE(8),
+        .ARRAY_SIZE(16),
         .DATA_WIDTH(ACC_WIDTH)
     ) reverse_skew_buff (
         .clk(clk),

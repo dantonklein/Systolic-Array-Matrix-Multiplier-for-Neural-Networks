@@ -1,145 +1,18 @@
-vsim -gui work.top_level_tb
-# vsim -gui work.top_level_tb 
-# Start time: 00:45:58 on Jan 12,2026
-# Loading sv_std.std
-# Loading work.top_level_tb
-# Loading work.systolic_array_mat_mult_8x8
-# Loading work.controller
-# Loading work.eight_x_eight
-# Loading work.skew_buffer2
-# Loading work.reverse_skew_buffer
-# Loading work.ws_pe
-# Loading work.ws_pe_no_a_out
-# WARNING: No extended dataflow license exists
-add wave -position end  sim:/top_level_tb/DUT/EIGHT_X_EIGHT/reverse_skew_buff/shifted_c_buffer
-add wave -position end  sim:/top_level_tb/DUT/EIGHT_X_EIGHT/reverse_skew_buff/data_out
-run -all
-add wave -position end  sim:/top_level_tb/DUT/read_valid
-restart -f
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-add wave -position end  sim:/top_level_tb/c_valid
-add wave -position end  sim:/top_level_tb/c_ready
-restart -f
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-quit -sim
-# End time: 01:58:50 on Jan 12,2026, Elapsed time: 1:12:52
-# Errors: 0, Warnings: 1
-# Compile of skew_buffer.sv was successful.
-# Compile of controller.sv was successful.
-# Compile of skew_buffer.sv was successful.
-# Compile of skew_buffer_tb.sv was successful.
-vsim -gui work.reverse_skew_buffer_tb3
-# vsim -gui work.reverse_skew_buffer_tb3 
-# Start time: 02:05:50 on Jan 12,2026
-# Loading sv_std.std
-# Loading work.reverse_skew_buffer_tb3
-# Loading work.reverse_skew_buffer
-# ** Error: (vsim-3694) The implicit port connection (.*) did not find a matching port, net, variable or interface instance in reverse_skew_buffer_tb3 for port 'read_valid'.
-#    Time: 0 ps  Iteration: 0  Instance: /reverse_skew_buffer_tb3/dut File: C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk3/skew_buffer.sv
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 8, found 7.
-#    Time: 0 ps  Iteration: 0  Instance: /reverse_skew_buffer_tb3/dut File: C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk3/skew_buffer_tb.sv Line: 63
-# ** Warning: (vsim-3722) C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk3/skew_buffer_tb.sv(63): [TFMPC] - Missing connection for port 'read_valid'.
-# Error loading design
-# End time: 02:05:51 on Jan 12,2026, Elapsed time: 0:00:01
-# Errors: 1, Warnings: 11
-# Compile of skew_buffer_tb.sv was successful.
-# Compile of skew_buffer.sv was successful.
-vsim -gui work.reverse_skew_buffer_tb3
-# vsim -gui work.reverse_skew_buffer_tb3 
-# Start time: 02:07:00 on Jan 12,2026
-# Loading sv_std.std
-# Loading work.reverse_skew_buffer_tb3
-# Loading work.reverse_skew_buffer
-# ** Error: (vsim-3694) The implicit port connection (.*) did not find a matching port, net, variable or interface instance in reverse_skew_buffer_tb3 for port 'read_valid'.
-#    Time: 0 ps  Iteration: 0  Instance: /reverse_skew_buffer_tb3/dut File: C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk3/skew_buffer.sv
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 8, found 7.
-#    Time: 0 ps  Iteration: 0  Instance: /reverse_skew_buffer_tb3/dut File: C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk3/skew_buffer_tb.sv Line: 63
-# ** Warning: (vsim-3722) C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk3/skew_buffer_tb.sv(63): [TFMPC] - Missing connection for port 'read_valid'.
-# Error loading design
-# End time: 02:07:00 on Jan 12,2026, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 5
-# Compile of skew_buffer_tb.sv was successful.
-vsim -gui work.reverse_skew_buffer_tb3
-# vsim -gui work.reverse_skew_buffer_tb3 
-# Start time: 02:07:30 on Jan 12,2026
-# Loading sv_std.std
-# Loading work.reverse_skew_buffer_tb3
-# Loading work.reverse_skew_buffer
-# ** Error: (vsim-3694) The implicit port connection (.*) did not find a matching port, net, variable or interface instance in reverse_skew_buffer_tb3 for port 'read_valid'.
-#    Time: 0 ps  Iteration: 0  Instance: /reverse_skew_buffer_tb3/dut File: C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk3/skew_buffer.sv
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 8, found 7.
-#    Time: 0 ps  Iteration: 0  Instance: /reverse_skew_buffer_tb3/dut File: C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk3/skew_buffer_tb.sv Line: 63
-# ** Warning: (vsim-3722) C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk3/skew_buffer_tb.sv(63): [TFMPC] - Missing connection for port 'read_valid'.
-# Error loading design
-# End time: 02:07:30 on Jan 12,2026, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 4
-# Compile of skew_buffer_tb.sv was successful.
-vsim -gui work.reverse_skew_buffer_tb3
-# vsim -gui work.reverse_skew_buffer_tb3 
-# Start time: 02:08:22 on Jan 12,2026
-# Loading sv_std.std
-# Loading work.reverse_skew_buffer_tb3
-# Loading work.reverse_skew_buffer
-# ** Error: (vsim-3694) The implicit port connection (.*) did not find a matching port, net, variable or interface instance in reverse_skew_buffer_tb3 for port 'read_valid'.
-#    Time: 0 ps  Iteration: 0  Instance: /reverse_skew_buffer_tb3/dut File: C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk3/skew_buffer.sv
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 8, found 7.
-#    Time: 0 ps  Iteration: 0  Instance: /reverse_skew_buffer_tb3/dut File: C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk3/skew_buffer_tb.sv Line: 63
-# ** Warning: (vsim-3722) C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk3/skew_buffer_tb.sv(63): [TFMPC] - Missing connection for port 'read_valid'.
-# Error loading design
-# End time: 02:08:23 on Jan 12,2026, Elapsed time: 0:00:01
-# Errors: 1, Warnings: 6
-# Compile of skew_buffer.sv was successful.
-# Compile of skew_buffer_tb.sv was successful.
-vsim -gui work.skew_buffer_tb3
-# vsim -gui work.skew_buffer_tb3 
-# Start time: 02:09:08 on Jan 12,2026
-# Loading sv_std.std
-# Loading work.skew_buffer_tb3
-# Loading work.skew_buffer3
-# WARNING: No extended dataflow license exists
-add wave -position end  sim:/skew_buffer_tb3/clk
-add wave -position end  sim:/skew_buffer_tb3/rst
-add wave -position end  sim:/skew_buffer_tb3/enable
-add wave -position end  sim:/skew_buffer_tb3/write
-add wave -position end  sim:/skew_buffer_tb3/row_ptr
-add wave -position end  sim:/skew_buffer_tb3/data_in
-add wave -position end  sim:/skew_buffer_tb3/data_out
-add wave -position 6  sim:/skew_buffer_tb3/dut/rotated_a_buffer
-add wave -position 7  sim:/skew_buffer_tb3/dut/read_row
-run -all
-quit -sim
-# End time: 03:14:30 on Jan 12,2026, Elapsed time: 1:05:22
-# Errors: 0, Warnings: 3
-# Compile of skew_buffer.sv was successful.
-# Compile of 8x8.sv was successful.
-# Compile of controller.sv failed with 3 errors.
-# Compile of pe.sv was successful.
-# Compile of top_level.sv was successful.
-# 5 compiles, 1 failed with 3 errors.
-# Compile of controller.sv was successful.
-# Compile of top_level_tb.sv was successful.
-# Load canceled
-# Compile of skew_buffer.sv was successful.
-# Compile of 8x8.sv was successful.
 # Compile of controller.sv was successful.
 # Compile of pe.sv was successful.
+# Compile of skew_buffer.sv was successful.
+# Compile of systolic_array.sv was successful.
 # Compile of top_level.sv was successful.
 # Compile of top_level_tb.sv was successful.
 # 6 compiles, 0 failed with no errors.
 vsim -gui work.top_level_tbmk3
 # vsim -gui work.top_level_tbmk3 
-# Start time: 03:19:27 on Jan 12,2026
+# Start time: 23:14:09 on Jan 12,2026
 # Loading sv_std.std
 # Loading work.top_level_tbmk3
-# Loading work.systolic_array_mat_mult_8x8mk3
+# Loading work.systolic_array_mat_mult_16x16mk3
 # Loading work.controller
-# Loading work.eight_x_eight
+# Loading work.systolic_array
 # Loading work.skew_buffer3
 # Loading work.reverse_skew_buffer
 # Loading work.ws_pe
@@ -160,23 +33,87 @@ add wave -position end  sim:/top_level_tbmk3/c_valid
 add wave -position end  sim:/top_level_tbmk3/c_ready
 add wave -position end  sim:/top_level_tbmk3/c_out
 run -all
+# ** Warning: (vsim-PLI-3406) Too many digits (3) in data on line 256 of file "test_A.txt". (Max is 2.)    : C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk3/top_level_tb.sv(33)
+#    Time: 0 ps  Iteration: 0  Instance: /top_level_tbmk3
+# ** Warning: (vsim-PLI-3406) Too many digits (3) in data on line 256 of file "test_B.txt". (Max is 2.)    : C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk3/top_level_tb.sv(34)
+#    Time: 0 ps  Iteration: 0  Instance: /top_level_tbmk3
 add wave -position end  sim:/top_level_tbmk3/DUT/enable
 add wave -position end  sim:/top_level_tbmk3/DUT/input_write
 add wave -position end  sim:/top_level_tbmk3/DUT/output_write
 add wave -position end  sim:/top_level_tbmk3/DUT/output_read
 add wave -position end  sim:/top_level_tbmk3/DUT/read_valid
 add wave -position end  sim:/top_level_tbmk3/DUT/row_ptr
+add wave -position end  sim:/top_level_tbmk3/DUT/CONTROLLER/state_r
+add wave -position end  sim:/top_level_tbmk3/DUT/CONTROLLER/next_state
+add wave -position end  sim:/top_level_tbmk3/DUT/CONTROLLER/data_ready_r
 add wave -position end  sim:/top_level_tbmk3/DUT/CONTROLLER/compute_counter_r
 add wave -position end  sim:/top_level_tbmk3/DUT/CONTROLLER/next_compute_counter
 add wave -position end  sim:/top_level_tbmk3/DUT/CONTROLLER/c_buffer_counter_r
 add wave -position end  sim:/top_level_tbmk3/DUT/CONTROLLER/next_c_buffer_counter
-add wave -position end  sim:/top_level_tbmk3/DUT/CONTROLLER/state_r
-add wave -position end  sim:/top_level_tbmk3/DUT/CONTROLLER/next_state
+add wave -position end  sim:/top_level_tbmk3/DUT/SYSTOLIC_ARRAY/a_skewed
+add wave -position end  sim:/top_level_tbmk3/DUT/SYSTOLIC_ARRAY/a_internals
+add wave -position end  sim:/top_level_tbmk3/DUT/SYSTOLIC_ARRAY/c_internals
+add wave -position end  sim:/top_level_tbmk3/DUT/SYSTOLIC_ARRAY/sys_c_out
+add wave -position end  sim:/top_level_tbmk3/DUT/SYSTOLIC_ARRAY/b_write_column
 restart -f
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 run -all
 # GetModuleFileName: The specified module could not be found.
 # 
 # 
-# End time: 03:28:13 on Jan 12,2026, Elapsed time: 0:08:46
-# Errors: 0, Warnings: 1
+# ** Warning: (vsim-PLI-3406) Too many digits (3) in data on line 256 of file "test_A.txt". (Max is 2.)    : C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk3/top_level_tb.sv(33)
+#    Time: 0 ps  Iteration: 0  Instance: /top_level_tbmk3
+# ** Warning: (vsim-PLI-3406) Too many digits (3) in data on line 256 of file "test_B.txt". (Max is 2.)    : C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk3/top_level_tb.sv(34)
+#    Time: 0 ps  Iteration: 0  Instance: /top_level_tbmk3
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Warning: (vsim-PLI-3406) Too many digits (3) in data on line 1 of file "test_A.txt". (Max is 2.)    : C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk3/top_level_tb.sv(33)
+#    Time: 0 ps  Iteration: 0  Instance: /top_level_tbmk3
+# ** Warning: (vsim-PLI-3406) Too many digits (3) in data on line 1 of file "test_B.txt". (Max is 2.)    : C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk3/top_level_tb.sv(34)
+#    Time: 0 ps  Iteration: 0  Instance: /top_level_tbmk3
+quit -sim
+# End time: 23:18:44 on Jan 12,2026, Elapsed time: 0:04:35
+# Errors: 0, Warnings: 3
+vsim -gui work.top_level_tbmk3
+# vsim -gui work.top_level_tbmk3 
+# Start time: 23:18:58 on Jan 12,2026
+# Loading sv_std.std
+# Loading work.top_level_tbmk3
+# Loading work.systolic_array_mat_mult_16x16mk3
+# Loading work.controller
+# Loading work.systolic_array
+# Loading work.skew_buffer3
+# Loading work.reverse_skew_buffer
+# Loading work.ws_pe
+# Loading work.ws_pe_no_a_out
+# WARNING: No extended dataflow license exists
+run -all
+# ** Warning: (vsim-PLI-3406) Too many digits (3) in data on line 1 of file "test_A.txt". (Max is 2.)    : C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk3/top_level_tb.sv(33)
+#    Time: 0 ps  Iteration: 0  Instance: /top_level_tbmk3
+# ** Warning: (vsim-PLI-3406) Too many digits (3) in data on line 1 of file "test_B.txt". (Max is 2.)    : C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk3/top_level_tb.sv(34)
+#    Time: 0 ps  Iteration: 0  Instance: /top_level_tbmk3
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Compile of top_level_tb.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.top_level_tbmk3
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+add wave -position 28  /top_level_tbmk3/DUT/SYSTOLIC_ARRAY/skew_buff3/rotated_a_buffer
+add wave -position end  /top_level_tbmk3/DUT/SYSTOLIC_ARRAY/reverse_skew_buff/shifted_c_buffer
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 

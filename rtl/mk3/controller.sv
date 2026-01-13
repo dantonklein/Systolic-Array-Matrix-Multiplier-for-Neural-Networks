@@ -21,7 +21,7 @@ module controller (
     output logic input_write,
     output logic output_write,
     //output logic output_read, this would be controlled by external peripheral
-    output logic[2:0] row_ptr,
+    output logic[3:0] row_ptr,
 
     //control signals for future c buffer
     input logic read_valid,
@@ -42,11 +42,11 @@ module controller (
 
     // logic[2:0] ab_counter_r, c_counter_r;
     // logic[2:0] next_ab_counter, next_c_counter;
-    logic[3:0] compute_counter_r;
-    logic[3:0] next_compute_counter;
+    logic[4:0] compute_counter_r;
+    logic[4:0] next_compute_counter;
 
-    logic[3:0] c_buffer_counter_r;
-    logic[3:0] next_c_buffer_counter;
+    logic[4:0] c_buffer_counter_r;
+    logic[4:0] next_c_buffer_counter;
 
     always_ff @(posedge clk or posedge rst) begin
         if (rst) begin
@@ -64,6 +64,9 @@ module controller (
             c_buffer_counter_r <= next_c_buffer_counter;
         end
     end
+
+    logic fire;
+    assign fire = a_valid && b_valid && a_ready && b_ready;
 
     always_comb begin
         done = 0;
@@ -102,8 +105,8 @@ module controller (
                 end else input_write = 0;
                 //counter resets upon overflow
             end
-            COMPUTE: begin //8 cycles
-                if(compute_counter_r < 8) begin
+            COMPUTE: begin //16 cycles
+                if(compute_counter_r < 16) begin
                     a_ready = 1;
                     b_ready = 1;
                     if(a_valid && b_valid) begin
@@ -116,11 +119,11 @@ module controller (
                     next_state = DRAIN;
                 end
             end
-            DRAIN: begin //15 cycles
+            DRAIN: begin //31 cycles
                 enable = 1;
                 output_write = 1;
                 next_c_buffer_counter = c_buffer_counter_r + 1'b1;
-                if(c_buffer_counter_r == 4'd14) next_state = DONE;
+                if(c_buffer_counter_r == 5'd30) next_state = DONE;
             end
             DONE: begin //1 cycle
                 next_c_buffer_counter = 0;
@@ -142,7 +145,7 @@ module controller (
             end
         end
     end
-    assign row_ptr = compute_counter_r[2:0];
+    assign row_ptr = compute_counter_r[3:0];
     assign c_valid = data_ready_r & read_valid;
     
 endmodule

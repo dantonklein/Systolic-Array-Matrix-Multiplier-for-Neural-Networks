@@ -1,6 +1,6 @@
 //skew buffer 3: this buffer will allow simultaneous writing and enabling, with a one cycle delay
 module skew_buffer3 #(
-    parameter ARRAY_SIZE = 8,
+    parameter ARRAY_SIZE = 16,
     parameter DATA_WIDTH = 8
 )(
     input logic clk,
@@ -30,7 +30,6 @@ always_ff @(posedge clk or posedge rst) begin
         if(write) begin
             //write to a line specified by the pointer
             for(int j = 0; j < ARRAY_SIZE; j++) begin
-                //rotated_a_buffer[row_ptr][ARRAY_SIZE-1-j] <= data_in[j];
                 rotated_a_buffer[row_ptr][j] <= data_in[j];
             end
         end 
@@ -67,7 +66,7 @@ endmodule
 
 //i need a way to track the progress of each column being filled, maybe i could use a counter or something
 module reverse_skew_buffer #(
-    parameter ARRAY_SIZE = 8,
+    parameter ARRAY_SIZE = 16,
     parameter DATA_WIDTH = 32
 )(
     input logic clk,

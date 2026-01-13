@@ -17,16 +17,18 @@ Mk3 Roadmap:
 
 1. (DONE) Improve throughput of 8x8 pipeline by loading columns as the systolic array computes
 
-2. Increase size of processing element grid to 16x16, create enable tree
+2. (DONE) Increase size of processing element grid to 16x16
 
-3. Create Fifo buffers for queuing tiles for the architecture
+3. Create enable tree
 
-4. Create accumulation registers
+4. Create Fifo buffers for queuing tiles for the architecture
 
-5. Create unified buffer
+5. Create accumulation registers
 
-6. Create the ram interface for the unified buffer
+6. Create unified buffer
 
-7. Create new controller (that triple nested for loop)
+7. Create the ram interface for the unified buffer
 
-8. Implement bias, activation, and pooling
+8. Create new controller (that triple nested for loop)
+
+9. Implement bias, activation, and pooling
