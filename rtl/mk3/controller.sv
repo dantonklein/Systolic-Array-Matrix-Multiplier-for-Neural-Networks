@@ -11,10 +11,12 @@ module controller (
     //control signals for future a buffer
     input logic a_valid,
     output logic a_ready,
+    input logic[6:0] a_count, 
 
     //control signals for future b buffer
     input logic b_valid,
     output logic b_ready,
+    input logic[6:0] b_count,
 
     //control signals
     output logic enable,
@@ -39,8 +41,6 @@ module controller (
 
     logic data_ready_r;
 
-    // logic[2:0] ab_counter_r, c_counter_r;
-    // logic[2:0] next_ab_counter, next_c_counter;
     logic[4:0] compute_counter_r;
     logic[4:0] next_compute_counter;
 
@@ -50,15 +50,11 @@ module controller (
     always_ff @(posedge clk or posedge rst) begin
         if (rst) begin
             state_r <= IDLE;
-            //ab_counter_r <= 0;
-            //c_counter_r <= 0;
             compute_counter_r <= 0;
             c_buffer_counter_r <= 0;
         end
         else begin
             state_r <= next_state;
-            //ab_counter_r <= next_ab_counter;
-            //c_counter_r <= next_c_counter;
             compute_counter_r <= next_compute_counter;
             c_buffer_counter_r <= next_c_buffer_counter;
         end
@@ -92,33 +88,36 @@ module controller (
         enable_pre_reg = 0;
         input_write = 0;
         output_write = 0;
-        //output_read = 0;
 
         next_state = state_r;
-        // next_ab_counter = ab_counter_r;
-        // next_c_counter = c_counter_r;
         next_compute_counter = compute_counter_r;
         next_c_buffer_counter = c_buffer_counter_r;
 
         case(state_r)
             IDLE: begin
-                // next_ab_counter = 0;
-                // next_c_counter = 0;
                 next_compute_counter = 0;
                 next_c_buffer_counter = 0;
                 ready = 1;
-                if(start) next_state = COMPUTE;
-            end
-            COMPUTE: begin //17 cycles
-                if(compute_counter_r < 16) begin
+                if(start && (a_count > 15) && (b_count > 15)) begin
+                    next_state = COMPUTE;
                     a_ready = 1;
                     b_ready = 1;
-                    if(fire) begin
-                        next_compute_counter = compute_counter_r + 1'b1;
-                        input_write = 1;
-                        enable_pre_reg = 1;
-                    end
-                end else begin //writing is finished
+                end
+            end
+            COMPUTE: begin //17 cycles
+
+                if(compute_counter_r < 15) begin
+                    a_ready = 1;
+                    b_ready = 1;
+                end
+
+                if(fire && compute_counter_r < 16) begin
+                    next_compute_counter = compute_counter_r + 1'b1;
+                    input_write = 1;
+                    enable_pre_reg = 1;
+                end
+
+                if(compute_counter_r == 16) begin //writing is finished
                     enable_pre_reg = 1;
                     next_state = DRAIN;
                 end

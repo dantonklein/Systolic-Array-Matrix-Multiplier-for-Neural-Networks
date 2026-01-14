@@ -1,134 +1,38 @@
-# Compile of controller.sv was successful.
-# Compile of pe.sv was successful.
-# Compile of skew_buffer.sv was successful.
-# Compile of systolic_array.sv was successful.
-# Compile of top_level.sv was successful.
-# Compile of top_level_tb.sv was successful.
-# 6 compiles, 0 failed with no errors.
-vsim -gui work.top_level_tbmk3
-# vsim -gui work.top_level_tbmk3 
-# Start time: 23:14:09 on Jan 12,2026
+# Compile of fifo.sv was successful.
+# Compile of fifo_tb.sv was successful.
+# Compile of fifo.sv was successful.
+vsim -gui work.fifo_tb
+# vsim -gui work.fifo_tb 
+# Start time: 19:04:53 on Jan 13,2026
 # Loading sv_std.std
-# Loading work.top_level_tbmk3
-# Loading work.systolic_array_mat_mult_16x16mk3
-# Loading work.controller
-# Loading work.systolic_array
-# Loading work.skew_buffer3
-# Loading work.reverse_skew_buffer
-# Loading work.ws_pe
-# Loading work.ws_pe_no_a_out
+# Loading work.fifo_tb
+# Loading work.fifo
 # WARNING: No extended dataflow license exists
-add wave -position end  sim:/top_level_tbmk3/clk
-add wave -position end  sim:/top_level_tbmk3/rst
-add wave -position end  sim:/top_level_tbmk3/start
-add wave -position end  sim:/top_level_tbmk3/done
-add wave -position end  sim:/top_level_tbmk3/ready
-add wave -position end  sim:/top_level_tbmk3/a_valid
-add wave -position end  sim:/top_level_tbmk3/a_ready
-add wave -position end  sim:/top_level_tbmk3/a_in
-add wave -position end  sim:/top_level_tbmk3/b_valid
-add wave -position end  sim:/top_level_tbmk3/b_ready
-add wave -position end  sim:/top_level_tbmk3/b_in
-add wave -position end  sim:/top_level_tbmk3/c_valid
-add wave -position end  sim:/top_level_tbmk3/c_ready
-add wave -position end  sim:/top_level_tbmk3/c_out
+add wave -position end  /fifo_tb/DUT/ram
+add wave -position 0  sim:/fifo_tb/clk
+add wave -position 1  sim:/fifo_tb/rst
+add wave -position 2  sim:/fifo_tb/full
+add wave -position 3  sim:/fifo_tb/wr_en
+add wave -position 4  sim:/fifo_tb/wr_data
+add wave -position 5  sim:/fifo_tb/empty
+add wave -position 6  sim:/fifo_tb/rd_en
+add wave -position 7  sim:/fifo_tb/rd_data
+add wave -position end  sim:/fifo_tb/DUT/wr_addr_r
+add wave -position end  sim:/fifo_tb/DUT/rd_addr_r
+add wave -position end  sim:/fifo_tb/DUT/count_r
+add wave -position end  sim:/fifo_tb/DUT/valid_wr
+add wave -position end  sim:/fifo_tb/DUT/valid_rd
 run -all
-# ** Warning: (vsim-PLI-3406) Too many digits (3) in data on line 256 of file "test_A.txt". (Max is 2.)    : C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk3/top_level_tb.sv(33)
-#    Time: 0 ps  Iteration: 0  Instance: /top_level_tbmk3
-# ** Warning: (vsim-PLI-3406) Too many digits (3) in data on line 256 of file "test_B.txt". (Max is 2.)    : C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk3/top_level_tb.sv(34)
-#    Time: 0 ps  Iteration: 0  Instance: /top_level_tbmk3
-add wave -position end  sim:/top_level_tbmk3/DUT/enable
-add wave -position end  sim:/top_level_tbmk3/DUT/input_write
-add wave -position end  sim:/top_level_tbmk3/DUT/output_write
-add wave -position end  sim:/top_level_tbmk3/DUT/output_read
-add wave -position end  sim:/top_level_tbmk3/DUT/read_valid
-add wave -position end  sim:/top_level_tbmk3/DUT/row_ptr
-add wave -position end  sim:/top_level_tbmk3/DUT/CONTROLLER/state_r
-add wave -position end  sim:/top_level_tbmk3/DUT/CONTROLLER/next_state
-add wave -position end  sim:/top_level_tbmk3/DUT/CONTROLLER/data_ready_r
-add wave -position end  sim:/top_level_tbmk3/DUT/CONTROLLER/compute_counter_r
-add wave -position end  sim:/top_level_tbmk3/DUT/CONTROLLER/next_compute_counter
-add wave -position end  sim:/top_level_tbmk3/DUT/CONTROLLER/c_buffer_counter_r
-add wave -position end  sim:/top_level_tbmk3/DUT/CONTROLLER/next_c_buffer_counter
-add wave -position end  sim:/top_level_tbmk3/DUT/SYSTOLIC_ARRAY/a_skewed
-add wave -position end  sim:/top_level_tbmk3/DUT/SYSTOLIC_ARRAY/a_internals
-add wave -position end  sim:/top_level_tbmk3/DUT/SYSTOLIC_ARRAY/c_internals
-add wave -position end  sim:/top_level_tbmk3/DUT/SYSTOLIC_ARRAY/sys_c_out
-add wave -position end  sim:/top_level_tbmk3/DUT/SYSTOLIC_ARRAY/b_write_column
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# ** Warning: (vsim-PLI-3406) Too many digits (3) in data on line 256 of file "test_A.txt". (Max is 2.)    : C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk3/top_level_tb.sv(33)
-#    Time: 0 ps  Iteration: 0  Instance: /top_level_tbmk3
-# ** Warning: (vsim-PLI-3406) Too many digits (3) in data on line 256 of file "test_B.txt". (Max is 2.)    : C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk3/top_level_tb.sv(34)
-#    Time: 0 ps  Iteration: 0  Instance: /top_level_tbmk3
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# ** Warning: (vsim-PLI-3406) Too many digits (3) in data on line 1 of file "test_A.txt". (Max is 2.)    : C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk3/top_level_tb.sv(33)
-#    Time: 0 ps  Iteration: 0  Instance: /top_level_tbmk3
-# ** Warning: (vsim-PLI-3406) Too many digits (3) in data on line 1 of file "test_B.txt". (Max is 2.)    : C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk3/top_level_tb.sv(34)
-#    Time: 0 ps  Iteration: 0  Instance: /top_level_tbmk3
+# Tests Completed.
 quit -sim
-# End time: 23:18:44 on Jan 12,2026, Elapsed time: 0:04:35
-# Errors: 0, Warnings: 3
-vsim -gui work.top_level_tbmk3
-# vsim -gui work.top_level_tbmk3 
-# Start time: 23:18:58 on Jan 12,2026
-# Loading sv_std.std
-# Loading work.top_level_tbmk3
-# Loading work.systolic_array_mat_mult_16x16mk3
-# Loading work.controller
-# Loading work.systolic_array
-# Loading work.skew_buffer3
-# Loading work.reverse_skew_buffer
-# Loading work.ws_pe
-# Loading work.ws_pe_no_a_out
-# WARNING: No extended dataflow license exists
-run -all
-# ** Warning: (vsim-PLI-3406) Too many digits (3) in data on line 1 of file "test_A.txt". (Max is 2.)    : C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk3/top_level_tb.sv(33)
-#    Time: 0 ps  Iteration: 0  Instance: /top_level_tbmk3
-# ** Warning: (vsim-PLI-3406) Too many digits (3) in data on line 1 of file "test_B.txt". (Max is 2.)    : C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/tb/mk3/top_level_tb.sv(34)
-#    Time: 0 ps  Iteration: 0  Instance: /top_level_tbmk3
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# Compile of top_level_tb.sv was successful.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.top_level_tbmk3
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-add wave -position 28  /top_level_tbmk3/DUT/SYSTOLIC_ARRAY/skew_buff3/rotated_a_buffer
-add wave -position end  /top_level_tbmk3/DUT/SYSTOLIC_ARRAY/reverse_skew_buff/shifted_c_buffer
-restart -f
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# Compile of controller.sv was successful.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.controller
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# Compile of controller.sv was successful.
-# Compile of pe.sv was successful.
-# Compile of skew_buffer.sv was successful.
-# Compile of systolic_array.sv was successful.
+# End time: 22:44:26 on Jan 13,2026, Elapsed time: 3:39:33
+# Errors: 0, Warnings: 6
+# Compile of fifo.sv was successful.
+# Compile of top_level.sv failed with 3 errors.
+# Compile of top_level.sv failed with 2 errors.
+# Compile of top_level.sv failed with 2 errors.
+# Compile of top_level.sv failed with 2 errors.
 # Compile of top_level.sv was successful.
-# Compile of top_level_tb.sv was successful.
-# 6 compiles, 0 failed with no errors.
+# Compile of controller.sv was successful.
+# Compile of fifo.sv was successful.
+# Compile of top_level.sv was successful.
