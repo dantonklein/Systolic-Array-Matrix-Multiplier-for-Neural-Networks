@@ -11,12 +11,12 @@ module controller (
     //control signals for future a buffer
     input logic a_valid,
     output logic a_ready,
-    input logic[6:0] a_count, 
+    input logic[8:0] a_count, 
 
     //control signals for future b buffer
     input logic b_valid,
     output logic b_ready,
-    input logic[6:0] b_count,
+    input logic[8:0] b_count,
 
     //control signals
     output logic enable,
@@ -111,7 +111,7 @@ module controller (
                     b_ready = 1;
                 end
 
-                if(fire && compute_counter_r < 16) begin
+                if(compute_counter_r < 16) begin
                     next_compute_counter = compute_counter_r + 1'b1;
                     input_write = 1;
                     enable_pre_reg = 1;

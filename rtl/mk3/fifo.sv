@@ -50,5 +50,5 @@ module fifo
 	
 	assign full = count_r == DEPTH;
 	assign empty = count_r == 0;
-	
+	assign count = count_r;
 endmodule

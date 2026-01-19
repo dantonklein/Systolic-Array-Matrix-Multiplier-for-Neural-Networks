@@ -6,13 +6,13 @@ module top_level_tbmk3;
     logic done;
     logic ready;
 
-    logic a_valid;
-    logic a_ready;
-    logic signed [7:0] a_in[16];
+    logic a_wr_en;
+    logic a_full;
+    logic [127:0] a_fifo_in;
 
-    logic b_valid;
-    logic b_ready;
-    logic signed [7:0] b_in[16];
+    logic b_wr_en;
+    logic b_full;
+    logic [127:0] b_fifo_in;
 
     logic c_valid;
     logic c_ready;
@@ -25,18 +25,18 @@ module top_level_tbmk3;
         forever #5 clk <= ~clk;
     end
     logic signed[7:0] a_flattened[256];
-    logic signed[7:0] a_matrix[16][16];
+    logic signed[127:0] a_matrix[16];
     logic signed[7:0] b_flattened[256];
-    logic signed[7:0] b_matrix[16][16];
-
+    logic signed[127:0] b_matrix[16];
     initial begin
         $readmemh("test_A.hex", a_flattened);
         $readmemh("test_B.hex", b_flattened);
-
         for(int i = 0; i < 16; i++) begin
+            b_matrix[i] = '0;
+            a_matrix[i] = '0;
             for(int j = 0; j < 16; j++) begin
-                a_matrix[i][j] = a_flattened[i*16 + j];
-                b_matrix[i][j] = b_flattened[i*16 + j];
+                b_matrix[i][j*8 +: 8] = b_flattened[i + j*16];
+                a_matrix[i][j*8 +: 8] = a_flattened[i + j*16];
             end
         end
     end
@@ -44,24 +44,26 @@ module top_level_tbmk3;
     initial begin
         rst <= 1;
         start <= 0;
-        a_valid <= 0;
-        b_valid <= 0;
+        a_wr_en <= 0;
+        b_wr_en <= 0;
         c_ready <= 0;
         @(posedge clk);
         rst <= 0;
+        repeat(2) @(posedge clk);
+        for(int i = 0; i < 16; i++) begin
+            a_fifo_in <= a_matrix[i];
+            b_fifo_in <= b_matrix[i];
+            a_wr_en <= 1;
+            b_wr_en <= 1;
+            @(posedge clk);
+        end
+        a_wr_en <= 0;
+        b_wr_en <= 0;
         @(posedge clk);
         start <= 1;
         @(posedge clk);
         start <= 0;
-        a_valid <= 1;
-        b_valid <= 1;
-        for(int i = 0; i < 16; i++) begin
-            for(int j = 0; j < 16; j++) begin
-                a_in[j] <= a_matrix[j][i];
-                b_in[j] <= b_matrix[j][i];
-            end
-            @(posedge clk);
-        end
+        
         @(posedge done);
         c_ready <= 1;
         repeat(20) @(posedge clk);

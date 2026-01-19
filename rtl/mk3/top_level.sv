@@ -28,7 +28,7 @@ module systolic_array_mat_mult_16x16mk3 (
 );
 logic signed[7:0] a_in[16], b_in[16];
 logic a_valid, a_ready, b_valid, b_ready;
-logic[6:0] a_count, b_count;
+logic[8:0] a_count, b_count;
 
 logic enable, input_write, output_write, output_read, read_valid;
 
@@ -74,7 +74,7 @@ systolic_array #(
 );
 
 //fifo signals
-logic signed [127:0] a_fifo_out, b_fifo_out;
+logic [127:0] a_fifo_out, b_fifo_out;
 logic rd_en;
 logic a_empty, b_empty; 
 
@@ -86,12 +86,14 @@ generate
 endgenerate
 
 assign rd_en = a_valid && a_ready && b_valid && b_ready;
+
 assign a_valid = !a_empty;
 assign b_valid = !b_empty;
 
+
 fifo #(
     .WIDTH(128),
-    .DEPTH(64)
+    .DEPTH(256)
 ) a_fifo (
     .clk(clk),
     .rst(rst),
@@ -106,7 +108,7 @@ fifo #(
 
 fifo #(
     .WIDTH(128),
-    .DEPTH(64)
+    .DEPTH(256)
 ) b_fifo (
     .clk(clk),
     .rst(rst),
