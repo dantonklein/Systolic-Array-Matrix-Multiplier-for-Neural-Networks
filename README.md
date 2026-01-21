@@ -21,7 +21,7 @@ Mk3 Roadmap:
 
 3. (DONE) Create enable tree
 
-4. Create Fifo buffers for queuing tiles for the architecture
+4. (DONE) Create Fifo buffers for queuing tiles for the architecture
 
 5. Create accumulation registers
 
@@ -29,6 +29,6 @@ Mk3 Roadmap:
 
 7. Create the ram interface for the unified buffer
 
-8. Create new controller (that triple nested for loop)
+8. Create new controller (that triple nested for loop for tiling) that controls current controller
 
 9. Implement bias, activation, and pooling
