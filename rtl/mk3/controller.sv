@@ -65,8 +65,6 @@ module controller (
 
     //for vivado
     // (* max_fanout = 32*)
-    // logic enable_r;
-
     //for quartus
     (* maxfan = 32*)
     logic enable_r;
