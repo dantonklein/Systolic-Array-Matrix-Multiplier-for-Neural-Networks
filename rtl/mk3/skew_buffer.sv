@@ -63,6 +63,47 @@ end
 
 endmodule
 
+module skew_buffer_fsmd #(
+    parameter ARRAY_SIZE = 16,
+    parameter DATA_WIDTH = 8
+) (
+    input logic clk,
+    input logic rst,
+    input logic read, 
+    input logic write, 
+    
+    input logic[$clog2(ARRAY_SIZE)-1:0] row_ptr,
+    //columns are written 
+    input var logic signed [DATA_WIDTH-1:0] data_in [ARRAY_SIZE],
+    output var logic signed [DATA_WIDTH-1:0] data_out [ARRAY_SIZE]
+);
+//matrix to hold the A matrix, which is rotated
+logic[DATA_WIDTH-1:0] rotated_a_buffer[ARRAY_SIZE][ARRAY_SIZE];
+logic[ARRAY_SIZE-1:0] read_row_r
+
+typedef enum logic {
+    WRITE,
+    STREAM
+} state_t;
+
+state_t state_r;
+
+always_ff begin
+    if(rst) begin
+
+    end else begin
+        
+    end
+end
+
+always_comb begin
+    for(int i = 0; i < ARRAY_SIZE; i++) begin
+        data_out[i] = rotated_a_buffer[i][0];
+    end
+end
+
+endmodule
+
 
 //i need a way to track the progress of each column being filled, maybe i could use a counter or something
 module reverse_skew_buffer #(

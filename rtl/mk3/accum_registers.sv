@@ -31,7 +31,7 @@ module accumulation_register #(
     } state_t;
     always_ff @(posedge clk or posedge rst) begin
         if(rst) begin
-
+            
         end else begin
 
         end
