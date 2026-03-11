@@ -22,6 +22,8 @@ module accumulation_register #(
 
 );
     logic[DATA_WIDTH-1:0] accum_reg[ARRAY_SIZE][ARRAY_SIZE];
+    //adding and writing in one cycle is a timing violation waiting to happen
+    logic[DATA_WIDTH-1:0] sums[ARRAY_SIZE];
     logic[$clog2(ARRAY_SIZE)-1:0] row_counter;
 
     typedef enum logic [1:0] {
@@ -29,11 +31,32 @@ module accumulation_register #(
         ACCUMULATE,
         READING
     } state_t;
+
+    state_t state_r;
+
     always_ff @(posedge clk or posedge rst) begin
         if(rst) begin
-            
+            state_r <= IDLE;
+            for(int i = 0; i < ARRAY_SIZE; i++) begin
+                sums[i] <= 0;
+            end
+            //set at max row count
+            row_counter <= 0 - 1;
+            done <= 0;
         end else begin
+            done <= 0;
+            case(state_r)
+                IDLE: begin
+                    //reset counter
+                    row_counter <= 0 - 1;
+                end
+                ACCUMULATE: begin
 
+                end
+                READING: begin
+
+                end
+            endcase
         end
     end
 endmodule
