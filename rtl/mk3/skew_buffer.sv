@@ -63,46 +63,53 @@ end
 
 endmodule
 
-module skew_buffer_fsmd #(
-    parameter ARRAY_SIZE = 16,
-    parameter DATA_WIDTH = 8
-) (
-    input logic clk,
-    input logic rst,
-    input logic read, 
-    input logic write, 
+// module skew_buffer_fsmd #(
+//     parameter ARRAY_SIZE = 16,
+//     parameter DATA_WIDTH = 8
+// ) (
+//     input logic clk,
+//     input logic rst,
+//     input logic read, 
+//     input logic write, 
     
-    input logic[$clog2(ARRAY_SIZE)-1:0] row_ptr,
-    //columns are written 
-    input var logic signed [DATA_WIDTH-1:0] data_in [ARRAY_SIZE],
-    output var logic signed [DATA_WIDTH-1:0] data_out [ARRAY_SIZE]
-);
-//matrix to hold the A matrix, which is rotated
-logic[DATA_WIDTH-1:0] rotated_a_buffer[ARRAY_SIZE][ARRAY_SIZE];
-logic[ARRAY_SIZE-1:0] read_row_r
+//     input logic[$clog2(ARRAY_SIZE)-1:0] row_ptr,
+//     //columns are written 
+//     input var logic signed [DATA_WIDTH-1:0] data_in [ARRAY_SIZE],
+//     output var logic signed [DATA_WIDTH-1:0] data_out [ARRAY_SIZE]
+// );
+// //matrix to hold the A matrix, which is rotated
+// logic[DATA_WIDTH-1:0] rotated_a_buffer[ARRAY_SIZE][ARRAY_SIZE];
+// logic[ARRAY_SIZE-1:0] read_row;
 
-typedef enum logic {
-    WRITE,
-    STREAM
-} state_t;
+// typedef enum logic {
+//     WRITE,
+//     STREAM
+// } state_t;
 
-state_t state_r;
+// state_t state_r;
 
-always_ff begin
-    if(rst) begin
-
-    end else begin
+// always_ff begin
+//     if(rst) begin
+//         for(int i = 0; i < ARRAY_SIZE; i++) begin
+//             for(int j = 0; j < ARRAY_SIZE; j++) begin
+//                 rotated_a_buffer[i][j] <= 0;
+//             end
+//             if(i == 0) read_row[0] <= 1;
+//             else read_row[i] <= 0;
+//         end
+//         state_r <= WRITE;
+//     end else begin
         
-    end
-end
+//     end
+// end
 
-always_comb begin
-    for(int i = 0; i < ARRAY_SIZE; i++) begin
-        data_out[i] = rotated_a_buffer[i][0];
-    end
-end
+// always_comb begin
+//     for(int i = 0; i < ARRAY_SIZE; i++) begin
+//         data_out[i] = rotated_a_buffer[i][0];
+//     end
+// end
 
-endmodule
+// endmodule
 
 
 //i need a way to track the progress of each column being filled, maybe i could use a counter or something
@@ -152,9 +159,10 @@ always_ff @(posedge clk or posedge rst) begin
                 write_column[i] <= 0;
             end
             if(read_counter == 0) read_valid <= 0;
+            else read_valid <= 1;
             
         end else if(write_buffer) begin
-            read_valid <= 1;
+            
             if(column_counter == ARRAY_SIZE-1) write_column[0] <= 0;
             else column_counter <= column_counter + 1'b1; 
             for(int i = 0; i < ARRAY_SIZE-1; i++) begin

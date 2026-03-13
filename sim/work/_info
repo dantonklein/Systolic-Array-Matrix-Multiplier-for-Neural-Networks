@@ -9,22 +9,47 @@ z2
 !i10f 100
 cModel Technology
 dC:/intelFPGA/20.1
-vcontroller
+vaccumulation_register
 Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-!s110 1768806935
+!s110 1773371302
 !i10b 1
-!s100 TFe@`FLm9hf8k``Vjj1E10
+!s100 YoaCSAU1gNGeOUniSSN3H2
 Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
-ISo2Z_S1E:?J3m:N[JlaIn0
+IQBVS1c`1b^mW98?zAA9Ok2
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 S1
 Z3 dC:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/sim
+w1773371130
+8C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk3/accum_registers.sv
+FC:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk3/accum_registers.sv
+!i122 15
+L0 3 109
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1773371302.000000
+!s107 C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk3/accum_registers.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk3/accum_registers.sv|
+!i113 1
+Z5 o-work work -sv
+Z6 tCvgOpt 0
+vcontroller
+R0
+!s110 1768806935
+!i10b 1
+!s100 TFe@`FLm9hf8k``Vjj1E10
+R1
+ISo2Z_S1E:?J3m:N[JlaIn0
+R2
+S1
+R3
 w1768806622
 8C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk3/controller.sv
 FC:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk3/controller.sv
 !i122 12
 L0 3 156
-Z4 OV;L;2020.1;71
+R4
 r1
 !s85 0
 31
@@ -32,8 +57,8 @@ r1
 !s107 C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk3/controller.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/klein/Documents/projects/Systolic-Array-Matrix-Multiplier-for-Neural-Networks/rtl/mk3/controller.sv|
 !i113 1
-Z5 o-work work -sv
-Z6 tCvgOpt 0
+R5
+R6
 vfifo
 R0
 !s110 1768801184
